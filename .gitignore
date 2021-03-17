@@ -6,3 +6,10 @@
 /pkg/
 /spec/reports/
 /tmp/
+coverage/*
+*~
+.rvmrc
+log/*
+measurement/*
+.DS_Store
+.env

@@ -1,4 +1,8 @@
-require "bundler/gem_tasks"
+# frozen_string_literal: true
+
+require 'rake'
+require 'bundler/gem_tasks'
+require 'rubocop/rake_task'
 require "rake/testtask"
 
 Rake::TestTask.new(:test) do |t|
@@ -8,3 +12,8 @@ Rake::TestTask.new(:test) do |t|
 end
 
 task :default => :test
+
+RuboCop::RakeTask.new do |task|
+  task.requires << 'rubocop-performance'
+  task.requires << 'rubocop-rspec'
+end
