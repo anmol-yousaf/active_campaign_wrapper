@@ -4,6 +4,10 @@ require 'active_campaign_wrapper/configuration'
 require 'active_campaign_wrapper/core/tag_gateway'
 require 'active_campaign_wrapper/core/contact_gateway'
 require 'active_campaign_wrapper/core/email_activity_gateway'
+require 'active_campaign_wrapper/core/list_gateway'
+require 'active_campaign_wrapper/core/custom_field_gateway'
+require 'active_campaign_wrapper/core/custom_field_option_gateway'
+require 'active_campaign_wrapper/core/custom_field_value_gateway'
 require 'active_campaign_wrapper/core/contact_tag_gateway'
 require 'active_campaign_wrapper/core/contact_automation_gateway'
 require 'active_campaign_wrapper/core/contact_score_value_gateway'
@@ -43,6 +47,22 @@ module ActiveCampaignWrapper
 
     def contact_automations
       ContactAutomationGateway.new(self)
+    end
+
+    def custom_fields
+      CustomFieldGateway.new(self)
+    end
+
+    def custom_field_options
+      CustomFieldOptionGateway.new(self)
+    end
+
+    def custom_field_values
+      CustomFieldValueGateway.new(self)
+    end
+
+    def lists
+      ListGateway.new(self)
     end
   end
 end
