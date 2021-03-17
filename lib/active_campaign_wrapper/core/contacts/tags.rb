@@ -4,26 +4,17 @@ module ActiveCampaignWrapper
   module Core
     module Contacts
       module Tags
-        def tags(**params)
-          get('/tags', query: params)
+        def contact_tags(contact_id, **params)
+          get("/contacts/#{contact_id}/contactTags", query: params)
         end
 
-        def create_tag(params)
-          params = { tag: params }
-          post('/tags', body: params)
+        def add_contact_tag(params)
+          params = { contact_tag: params }
+          post('/contactTags', body: params)
         end
 
-        def delete_tag(tag_id)
-          delete("/tags/#{tag_id}")
-        end
-
-        def update_tag(tag_id, params)
-          params = { tag: params }
-          put("/tags/#{tag_id}", body: params)
-        end
-
-        def tag(tag_id)
-          get("/tags/#{tag_id}")
+        def remove_contact_tag(contact_tag_id)
+          delete("/contactTags/#{contact_tag_id}")
         end
       end
     end
