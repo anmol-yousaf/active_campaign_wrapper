@@ -4,9 +4,9 @@ require 'active_campaign_wrapper/configuration'
 require 'active_campaign_wrapper/core/tag_gateway'
 require 'active_campaign_wrapper/core/contact_gateway'
 require 'active_campaign_wrapper/core/email_activity_gateway'
-# require 'active_campaign_wrapper/core/contacts/tags'
-# require 'active_campaign_wrapper/core/contacts/automations'
-# require 'active_campaign_wrapper/core/contacts/score_values'
+require 'active_campaign_wrapper/core/contact_tag_gateway'
+require 'active_campaign_wrapper/core/contact_automation_gateway'
+require 'active_campaign_wrapper/core/contact_score_value_gateway'
 
 module ActiveCampaignWrapper
   class Client
@@ -31,6 +31,18 @@ module ActiveCampaignWrapper
 
     def email_activities
       EmailActivityGateway.new(self)
+    end
+
+    def contact_tags
+      ContactTagGateway.new(self)
+    end
+
+    def contact_score_values
+      ContactScoreValueGateway.new(self)
+    end
+
+    def contact_automations
+      ContactAutomationGateway.new(self)
     end
   end
 end
