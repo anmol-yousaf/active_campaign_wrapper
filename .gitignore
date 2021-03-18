@@ -13,3 +13,7 @@ log/*
 measurement/*
 .DS_Store
 .env
+*.gem
+spec/dummy/tmp/*
+spec/dummy/log/*.log
+.rspec_status
