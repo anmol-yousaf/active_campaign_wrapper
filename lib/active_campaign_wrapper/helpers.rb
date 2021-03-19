@@ -4,35 +4,40 @@ require 'active_support/core_ext/string'
 
 module ActiveCampaignWrapper
   module Helpers
+    module_function
+
     def normalize_response(response)
       raise ActiveCampaignWrapper::AuthorizationError.new(response.message) if response.code == 403
-      raise ActiveCampaignWrapper::Error.new(response.message) if [200, 201, 202].exclude?(response.code)
+      raise ActiveCampaignWrapper::Error.new(response.message) unless [200, 201, 202].include?(response.code)
 
-      transform_keys(response, :underscore)
+      if response&.body.present?
+        transform_keys(response, [:underscore])
+      else
+        {}
+      end
     end
 
-    def normalize_body(args)
-      return unless args[1].is_a?(Hash)
+    def normalize_body(params, skip_normalization = [])
+      return unless params.is_a?(Hash)
 
-      args[1].merge!(
-        body: transform_keys(
-          args[1][:body] || {},
-          :camelcase, :lower
-        ).to_json
+      params = transform_keys(
+        params || {},
+        %i[camelcase lower],
+        skip_normalization
       )
-      args
+      params.to_json
     end
 
     # Transforms case of all hash keys
     # @note this is used to always output a hash response
     #
     # @param [Hash] hash initial hash before transformation
-    # @param [Symbol, Symbol] :underscore or [:camelcase, :lower]  DEFAULT: underscore
+    # @param [Symbol, Symbol] [:underscore] or [:camelcase, :lower]  DEFAULT: underscore
     # @return [Hash]
     #
-    def transform_keys(hash, *case_style)
+    def transform_keys(hash, case_style, skip_normalization = [])
       hash.each_with_object({}) do |(key, value), memo|
-        memo[transform_key(key, *case_style)] = transform_value(value, *case_style)
+        memo[transform_key(key, case_style, skip_normalization)] = transform_value(value, case_style, skip_normalization)
       end
     end
 
@@ -43,8 +48,11 @@ module ActiveCampaignWrapper
     # @param [Symbol, Symbol]
     # @return [Symbol] the transformed key
     #
-    def transform_key(key, *case_style)
-      key.to_s.public_send(*case_style).to_sym
+    def transform_key(key, case_style, skip_normalization = [])
+      unless skip_normalization.include?(key)
+        key = key.to_s.public_send(*case_style)
+      end
+      key.to_sym
     end
 
     #
@@ -52,25 +60,25 @@ module ActiveCampaignWrapper
     # @note used for nested values like hashes and arrays
     #
     # @param [Object] value the value to transform
-    # @param [Symbol, Symbol] :underscore or [:camelcase, :lower]  DEFAULT: underscore
+    # @param [Symbol, Symbol] [:underscore] or [:camelcase, :lower]  DEFAULT: underscore
     # @return [Object]
     #
-    def transform_value(value, *case_style)
+    def transform_value(value, case_style, skip_normalization = [])
       case value
       when Hash
-        transform_keys(value, *case_style)
+        transform_keys(value, case_style, skip_normalization)
       when Array
-        transform_array(value, *case_style)
+        transform_array(value, case_style, skip_normalization)
       else
         value
       end
     end
 
-    def transform_array(collection, *case_style)
+    def transform_array(collection, case_style, skip_normalization = [])
       collection.map do |element|
         case element
         when Hash
-          transform_keys(element, *case_style)
+          transform_keys(element, case_style, skip_normalization)
         else
           element
         end

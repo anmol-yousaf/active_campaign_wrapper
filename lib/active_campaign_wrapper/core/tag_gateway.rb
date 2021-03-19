@@ -14,7 +14,10 @@ module ActiveCampaignWrapper
 
       def create(params)
         params = { tag: params }
-        @config.post('/tags', body: params)
+        @config.post(
+          '/tags',
+          body: ActiveCampaignWrapper::Helpers.normalize_body(params)
+        )
       end
 
       def delete(tag_id)
@@ -23,7 +26,10 @@ module ActiveCampaignWrapper
 
       def update(tag_id, params)
         params = { tag: params }
-        @config.put("/tags/#{tag_id}", body: params)
+        @config.put(
+          "/tags/#{tag_id}", body:
+          ActiveCampaignWrapper::Helpers.normalize_body(params)
+        )
       end
 
       def find(tag_id)

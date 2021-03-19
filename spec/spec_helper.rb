@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
-require 'dotenv/load'
 require 'simplecov'
-require 'bundler/setup'
-
-require 'pry'
-require 'rspec'
-
-require 'active_campaign_wrapper'
 
 SimpleCov.start do
   add_filter 'spec/'
   add_filter '.github/'
   add_filter 'lib/generators/templates/'
 end
+
+require 'dotenv/load'
+require 'bundler/setup'
+require 'pry'
+require 'rspec'
+require 'rspec/json_expectations'
+require 'active_campaign_wrapper'
 
 RSpec.configure do |config|
   config.define_derived_metadata do |meta|

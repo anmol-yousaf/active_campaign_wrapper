@@ -28,7 +28,11 @@ module ActiveCampaignWrapper
       end
 
       def bulk_import(params)
-        @config.post('/import/bulk_import', body: params)
+        @config.post(
+          '/import/bulk_import',
+          body: params,
+          skip_normalization: ActiveCampaignWrapper::API::Arguments::DEFINED_WITH_UNDERSCORE[:contact][:bulk_import]
+        )
       end
 
       def delete(contact_id)

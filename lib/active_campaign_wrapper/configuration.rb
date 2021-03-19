@@ -8,7 +8,6 @@ module ActiveCampaignWrapper
     include Helpers
 
     attr_accessor :endpoint_url, :api_token
-    attr_writer :client
 
     format :json
 
@@ -20,25 +19,21 @@ module ActiveCampaignWrapper
       self.class.default_options.merge! headers: { api_token: @api_token }
     end
 
-    def self.client
-      @client ||= ActiveCampaignWrapper::Client.new(endpoint_url, api_token)
-    end
-
     def post(*args)
       safe_http_call do
-        self.class.post(*normalize_body(args))
+        self.class.post(*args)
       end
     end
 
     def patch(*args)
       safe_http_call do
-        self.class.patch(*normalize_body(args))
+        self.class.patch(*args)
       end
     end
 
     def put(*args)
       safe_http_call do
-        self.class.put(*normalize_body(args))
+        self.class.put(*args)
       end
     end
 

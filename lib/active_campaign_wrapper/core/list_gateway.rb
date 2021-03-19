@@ -14,7 +14,13 @@ module ActiveCampaignWrapper
 
       def create(params)
         params = { list: params }
-        @config.post('/lists', body: params)
+        @config.post(
+          '/lists',
+          body: ActiveCampaignWrapper::Helpers.normalize_body(
+            params,
+            ActiveCampaignWrapper::Api::List::Arguments::SNAKE_CASED[:create]
+          )
+        )
       end
 
       def delete(list_id)
@@ -23,7 +29,13 @@ module ActiveCampaignWrapper
 
       def update(list_id, params)
         params = { list: params }
-        @config.put("/lists/#{list_id}", body: params)
+        @config.put(
+          "/lists/#{list_id}",
+          body: ActiveCampaignWrapper::Helpers.normalize_body(
+            params,
+            ActiveCampaignWrapper::Api::List::Arguments::SNAKE_CASED[:create]
+          )
+        )
       end
 
       def find(list_id)

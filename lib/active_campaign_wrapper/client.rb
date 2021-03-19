@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'active_campaign_wrapper/configuration'
+
 require 'active_campaign_wrapper/core/tag_gateway'
 require 'active_campaign_wrapper/core/contact_gateway'
 require 'active_campaign_wrapper/core/email_activity_gateway'
@@ -11,6 +12,9 @@ require 'active_campaign_wrapper/core/custom_field_value_gateway'
 require 'active_campaign_wrapper/core/contact_tag_gateway'
 require 'active_campaign_wrapper/core/contact_automation_gateway'
 require 'active_campaign_wrapper/core/contact_score_value_gateway'
+
+require 'active_campaign_wrapper/api/contact/arguments'
+require 'active_campaign_wrapper/api/list/arguments'
 
 module ActiveCampaignWrapper
   class Client

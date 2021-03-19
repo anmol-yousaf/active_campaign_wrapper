@@ -1,0 +1,199 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<API_ENDPOINT>/api/3/lists"
+    body:
+      encoding: UTF-8
+      string: '{"list":{"name":"Awesome List","stringid":"awesome-list","sender_url":"https://mhenrixon.com","sender_reminder":"This
+        is why we are sending you this"}}'
+    headers:
+      Api-Token:
+      - "<API_KEY>"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Fri, 19 Mar 2021 11:34:14 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '486'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=29d13963e7f60e7e053d280e14244e04; path=/; HttpOnly
+      - __cfduid=d55647e5ae84698b4238b5f27059dd9cd1616153653; expires=Sun, 18-Apr-21
+        11:34:13 GMT; path=/; domain=.api-us1.com; HttpOnly; SameSite=Lax
+      - em_acp_globalauth_cookie=0bcf3f8a-c0e3-4251-9476-8ef8d99f1cab; path=/; domain=.wegohealth.api-us1.com;
+        secure; httponly
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth.api-us1.com
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      X-Envoy-Upstream-Service-Time:
+      - '409'
+      X-Request-Id:
+      - 35da8853-a24a-4a34-bb0a-a3350ed8cc38
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '08ebdcc9bc000017e334a21000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 632663ef9c6e17e3-DXB
+    body:
+      encoding: UTF-8
+      string: '{"list":{"name":"Awesome List","stringid":"awesome-list","sender_url":"https:\/\/mhenrixon.com","sender_reminder":"This
+        is why we are sending you this","cdate":"2021-03-19T06:34:13-05:00","udate":"2021-03-19T06:34:13-05:00","links":{"contactGoalLists":"https:\/\/wegohealth.api-us1.com\/api\/3\/lists\/19\/contactGoalLists","user":"https:\/\/wegohealth.api-us1.com\/api\/3\/lists\/19\/user","addressLists":"https:\/\/wegohealth.api-us1.com\/api\/3\/lists\/19\/addressLists"},"id":"19"}}'
+  recorded_at: Fri, 19 Mar 2021 11:34:14 GMT
+- request:
+    method: get
+    uri: "<API_ENDPOINT>/api/3/lists"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Token:
+      - "<API_KEY>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 19 Mar 2021 11:34:14 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=d6be94d77c01380a7e480e5fdaba4150; path=/; HttpOnly
+      - __cfduid=d1c9882643b375912d821c3f29846afec1616153654; expires=Sun, 18-Apr-21
+        11:34:14 GMT; path=/; domain=.api-us1.com; HttpOnly; SameSite=Lax
+      - em_acp_globalauth_cookie=c6ee7c05-c59b-48a8-8e49-518f01b1c9cd; path=/; domain=.wegohealth.api-us1.com;
+        secure; httponly
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth.api-us1.com
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      X-Envoy-Upstream-Service-Time:
+      - '108'
+      X-Request-Id:
+      - ec98a84d-a78b-47c7-9cb0-670048f81f00
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '08ebdccd28000017db72804000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 632663f50a7e17db-DXB
+    body:
+      encoding: UTF-8
+      string: '{"lists":[{"stringid":"awesome-list","userid":"0","name":"Awesome List","cdate":"2021-03-19T06:28:17-05:00","p_use_tracking":"1","p_use_analytics_read":"0","p_use_analytics_link":"0","p_use_twitter":"0","p_use_facebook":"0","p_embed_image":"1","p_use_captcha":"1","send_last_broadcast":"0","private":"0","analytics_domains":null,"analytics_source":"","analytics_ua":"","twitter_token":"","twitter_token_secret":"","facebook_session":null,"carboncopy":null,"subscription_notify":null,"unsubscription_notify":null,"require_name":"0","get_unsubscribe_reason":"0","to_name":"Subscriber","optinoptout":"1","sender_name":"","sender_addr1":"","sender_addr2":"","sender_city":"","sender_state":"","sender_zip":"","sender_country":"","sender_phone":"","sender_url":"https:\/\/mhenrixon.com","sender_reminder":"This
+        is why we are sending you this","fulladdress":null,"optinmessageid":"0","optoutconf":"0","deletestamp":null,"udate":"2021-03-19T06:28:17-05:00","created_timestamp":"2021-03-19
+        06:28:17","updated_timestamp":"2021-03-19 06:28:17","created_by":null,"updated_by":null,"links":{"contactGoalLists":"https:\/\/wegohealth.api-us1.com\/api\/3\/lists\/8\/contactGoalLists","user":"https:\/\/wegohealth.api-us1.com\/api\/3\/lists\/8\/user","addressLists":"https:\/\/wegohealth.api-us1.com\/api\/3\/lists\/8\/addressLists"},"id":"8","user":null},{"stringid":"awesome-list","userid":"0","name":"Awesome
+        List","cdate":"2021-03-19T06:28:19-05:00","p_use_tracking":"1","p_use_analytics_read":"0","p_use_analytics_link":"0","p_use_twitter":"0","p_use_facebook":"0","p_embed_image":"1","p_use_captcha":"1","send_last_broadcast":"0","private":"0","analytics_domains":null,"analytics_source":"","analytics_ua":"","twitter_token":"","twitter_token_secret":"","facebook_session":null,"carboncopy":null,"subscription_notify":null,"unsubscription_notify":null,"require_name":"0","get_unsubscribe_reason":"0","to_name":"Subscriber","optinoptout":"1","sender_name":"","sender_addr1":"","sender_addr2":"","sender_city":"","sender_state":"","sender_zip":"","sender_country":"","sender_phone":"","sender_url":"https:\/\/mhenrixon.com","sender_reminder":"This
+        is why we are sending you this","fulladdress":null,"optinmessageid":"0","optoutconf":"0","deletestamp":null,"udate":"2021-03-19T06:28:19-05:00","created_timestamp":"2021-03-19
+        06:28:19","updated_timestamp":"2021-03-19 06:28:19","created_by":null,"updated_by":null,"links":{"contactGoalLists":"https:\/\/wegohealth.api-us1.com\/api\/3\/lists\/9\/contactGoalLists","user":"https:\/\/wegohealth.api-us1.com\/api\/3\/lists\/9\/user","addressLists":"https:\/\/wegohealth.api-us1.com\/api\/3\/lists\/9\/addressLists"},"id":"9","user":null},{"stringid":"awesome-list","userid":"0","name":"Awesome
+        List","cdate":"2021-03-19T06:28:22-05:00","p_use_tracking":"1","p_use_analytics_read":"0","p_use_analytics_link":"0","p_use_twitter":"0","p_use_facebook":"0","p_embed_image":"1","p_use_captcha":"1","send_last_broadcast":"0","private":"0","analytics_domains":null,"analytics_source":"","analytics_ua":"","twitter_token":"","twitter_token_secret":"","facebook_session":null,"carboncopy":null,"subscription_notify":null,"unsubscription_notify":null,"require_name":"0","get_unsubscribe_reason":"0","to_name":"Subscriber","optinoptout":"1","sender_name":"","sender_addr1":"","sender_addr2":"","sender_city":"","sender_state":"","sender_zip":"","sender_country":"","sender_phone":"","sender_url":"https:\/\/mhenrixon.com","sender_reminder":"This
+        is why we are sending you this","fulladdress":null,"optinmessageid":"0","optoutconf":"0","deletestamp":null,"udate":"2021-03-19T06:28:22-05:00","created_timestamp":"2021-03-19
+        06:28:22","updated_timestamp":"2021-03-19 06:28:22","created_by":null,"updated_by":null,"links":{"contactGoalLists":"https:\/\/wegohealth.api-us1.com\/api\/3\/lists\/11\/contactGoalLists","user":"https:\/\/wegohealth.api-us1.com\/api\/3\/lists\/11\/user","addressLists":"https:\/\/wegohealth.api-us1.com\/api\/3\/lists\/11\/addressLists"},"id":"11","user":null},{"stringid":"awesome-list","userid":"0","name":"Awesome
+        List","cdate":"2021-03-19T06:32:58-05:00","p_use_tracking":"1","p_use_analytics_read":"0","p_use_analytics_link":"0","p_use_twitter":"0","p_use_facebook":"0","p_embed_image":"1","p_use_captcha":"1","send_last_broadcast":"0","private":"0","analytics_domains":null,"analytics_source":"","analytics_ua":"","twitter_token":"","twitter_token_secret":"","facebook_session":null,"carboncopy":null,"subscription_notify":null,"unsubscription_notify":null,"require_name":"0","get_unsubscribe_reason":"0","to_name":"Subscriber","optinoptout":"1","sender_name":"","sender_addr1":"","sender_addr2":"","sender_city":"","sender_state":"","sender_zip":"","sender_country":"","sender_phone":"","sender_url":"https:\/\/mhenrixon.com","sender_reminder":"This
+        is why we are sending you this","fulladdress":null,"optinmessageid":"0","optoutconf":"0","deletestamp":null,"udate":"2021-03-19T06:32:58-05:00","created_timestamp":"2021-03-19
+        06:32:58","updated_timestamp":"2021-03-19 06:32:58","created_by":null,"updated_by":null,"links":{"contactGoalLists":"https:\/\/wegohealth.api-us1.com\/api\/3\/lists\/12\/contactGoalLists","user":"https:\/\/wegohealth.api-us1.com\/api\/3\/lists\/12\/user","addressLists":"https:\/\/wegohealth.api-us1.com\/api\/3\/lists\/12\/addressLists"},"id":"12","user":null},{"stringid":"awesome-list","userid":"0","name":"Awesome
+        List","cdate":"2021-03-19T06:33:00-05:00","p_use_tracking":"1","p_use_analytics_read":"0","p_use_analytics_link":"0","p_use_twitter":"0","p_use_facebook":"0","p_embed_image":"1","p_use_captcha":"1","send_last_broadcast":"0","private":"0","analytics_domains":null,"analytics_source":"","analytics_ua":"","twitter_token":"","twitter_token_secret":"","facebook_session":null,"carboncopy":null,"subscription_notify":null,"unsubscription_notify":null,"require_name":"0","get_unsubscribe_reason":"0","to_name":"Subscriber","optinoptout":"1","sender_name":"","sender_addr1":"","sender_addr2":"","sender_city":"","sender_state":"","sender_zip":"","sender_country":"","sender_phone":"","sender_url":"https:\/\/mhenrixon.com","sender_reminder":"This
+        is why we are sending you this","fulladdress":null,"optinmessageid":"0","optoutconf":"0","deletestamp":null,"udate":"2021-03-19T06:33:00-05:00","created_timestamp":"2021-03-19
+        06:33:00","updated_timestamp":"2021-03-19 06:33:00","created_by":null,"updated_by":null,"links":{"contactGoalLists":"https:\/\/wegohealth.api-us1.com\/api\/3\/lists\/13\/contactGoalLists","user":"https:\/\/wegohealth.api-us1.com\/api\/3\/lists\/13\/user","addressLists":"https:\/\/wegohealth.api-us1.com\/api\/3\/lists\/13\/addressLists"},"id":"13","user":null},{"stringid":"awesome-list","userid":"0","name":"Awesome
+        List","cdate":"2021-03-19T06:33:01-05:00","p_use_tracking":"1","p_use_analytics_read":"0","p_use_analytics_link":"0","p_use_twitter":"0","p_use_facebook":"0","p_embed_image":"1","p_use_captcha":"1","send_last_broadcast":"0","private":"0","analytics_domains":null,"analytics_source":"","analytics_ua":"","twitter_token":"","twitter_token_secret":"","facebook_session":null,"carboncopy":null,"subscription_notify":null,"unsubscription_notify":null,"require_name":"0","get_unsubscribe_reason":"0","to_name":"Subscriber","optinoptout":"1","sender_name":"","sender_addr1":"","sender_addr2":"","sender_city":"","sender_state":"","sender_zip":"","sender_country":"","sender_phone":"","sender_url":"https:\/\/mhenrixon.com","sender_reminder":"This
+        is why we are sending you this","fulladdress":null,"optinmessageid":"0","optoutconf":"0","deletestamp":null,"udate":"2021-03-19T06:33:01-05:00","created_timestamp":"2021-03-19
+        06:33:01","updated_timestamp":"2021-03-19 06:33:01","created_by":null,"updated_by":null,"links":{"contactGoalLists":"https:\/\/wegohealth.api-us1.com\/api\/3\/lists\/14\/contactGoalLists","user":"https:\/\/wegohealth.api-us1.com\/api\/3\/lists\/14\/user","addressLists":"https:\/\/wegohealth.api-us1.com\/api\/3\/lists\/14\/addressLists"},"id":"14","user":null},{"stringid":"awesome-list","userid":"0","name":"Awesome
+        List","cdate":"2021-03-19T06:34:13-05:00","p_use_tracking":"1","p_use_analytics_read":"0","p_use_analytics_link":"0","p_use_twitter":"0","p_use_facebook":"0","p_embed_image":"1","p_use_captcha":"1","send_last_broadcast":"0","private":"0","analytics_domains":null,"analytics_source":"","analytics_ua":"","twitter_token":"","twitter_token_secret":"","facebook_session":null,"carboncopy":null,"subscription_notify":null,"unsubscription_notify":null,"require_name":"0","get_unsubscribe_reason":"0","to_name":"Subscriber","optinoptout":"1","sender_name":"","sender_addr1":"","sender_addr2":"","sender_city":"","sender_state":"","sender_zip":"","sender_country":"","sender_phone":"","sender_url":"https:\/\/mhenrixon.com","sender_reminder":"This
+        is why we are sending you this","fulladdress":null,"optinmessageid":"0","optoutconf":"0","deletestamp":null,"udate":"2021-03-19T06:34:13-05:00","created_timestamp":"2021-03-19
+        06:34:13","updated_timestamp":"2021-03-19 06:34:13","created_by":null,"updated_by":null,"links":{"contactGoalLists":"https:\/\/wegohealth.api-us1.com\/api\/3\/lists\/19\/contactGoalLists","user":"https:\/\/wegohealth.api-us1.com\/api\/3\/lists\/19\/user","addressLists":"https:\/\/wegohealth.api-us1.com\/api\/3\/lists\/19\/addressLists"},"id":"19","user":null}],"meta":{"total":"7"}}'
+  recorded_at: Fri, 19 Mar 2021 11:34:14 GMT
+- request:
+    method: delete
+    uri: "<API_ENDPOINT>/api/3/lists/19"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Token:
+      - "<API_KEY>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 19 Mar 2021 11:34:15 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=79e1f596db9fd2d2ea839615de169c45; path=/; HttpOnly
+      - __cfduid=d4d1c0f793a52903f1660697de18083001616153655; expires=Sun, 18-Apr-21
+        11:34:15 GMT; path=/; domain=.api-us1.com; HttpOnly; SameSite=Lax
+      - em_acp_globalauth_cookie=78856577-5500-40a6-a996-df64eea41dbb; path=/; domain=.wegohealth.api-us1.com;
+        secure; httponly
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth.api-us1.com
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      X-Envoy-Upstream-Service-Time:
+      - '164'
+      X-Request-Id:
+      - 69e1ecee-3ee2-49e5-98e3-a33d4725e1db
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '08ebdccf17000017db23a82000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 632663f82f6d17db-DXB
+    body:
+      encoding: UTF-8
+      string: "{}"
+  recorded_at: Fri, 19 Mar 2021 11:34:15 GMT
+recorded_with: VCR 6.0.0
