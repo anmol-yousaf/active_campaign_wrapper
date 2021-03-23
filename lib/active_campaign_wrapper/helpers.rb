@@ -7,8 +7,8 @@ module ActiveCampaignWrapper
     module_function
 
     def normalize_response(response)
-      raise ActiveCampaignWrapper::AuthorizationError.new(response.message) if response.code == 403
-      raise ActiveCampaignWrapper::Error.new(response.message) unless [200, 201, 202].include?(response.code)
+      raise ActiveCampaignWrapper::AuthorizationError.new(response.message) if response.unauthorized?
+      raise ActiveCampaignWrapper::Error.new(response.message) unless response.success?
 
       if response&.body.present?
         transform_keys(response, [:underscore])
@@ -45,7 +45,7 @@ module ActiveCampaignWrapper
     # Transform the provided keys case and lastly symbolize it
     #
     # @param [String, Symbol] key the name of the key to change case
-    # @param [Symbol, Symbol]
+    # @param [Symbol, Symbol] [:underscore] or [:camelcase, :lower]  DEFAULT: underscore
     # @return [Symbol] the transformed key
     #
     def transform_key(key, case_style, skip_normalization = [])

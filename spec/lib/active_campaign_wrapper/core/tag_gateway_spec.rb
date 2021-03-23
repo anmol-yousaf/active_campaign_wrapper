@@ -28,7 +28,7 @@ RSpec.describe ActiveCampaignWrapper::Core::TagGateway, :vcr do
   describe '#delete', :with_tag_params do
     subject(:response) { tag_gateway.delete(created_tag_id) }
 
-    let(:created_tag_id) do
+    let!(:created_tag_id) do
       response = tag_gateway.create(tag_params)
       response.dig(:tag, :id)
     end

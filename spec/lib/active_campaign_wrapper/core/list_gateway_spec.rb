@@ -28,7 +28,7 @@ RSpec.describe ActiveCampaignWrapper::Core::ListGateway, :vcr do
   describe '#delete', :with_list_params do
     subject(:response) { list_gateway.delete(created_list_id) }
 
-    let(:created_list_id) do
+    let!(:created_list_id) do
       response = list_gateway.create(list_params)
       response.dig(:list, :id)
     end

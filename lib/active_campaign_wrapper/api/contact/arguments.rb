@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 module ActiveCampaignWrapper
-  module API
+  module Api
     module Contact
       module Arguments
-        DEFINED_WITH_UNDERSCORE = {
+        SNAKE_CASED = {
           bulk_import: %i[
             first_name
             last_name

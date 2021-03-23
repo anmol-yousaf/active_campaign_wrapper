@@ -14,24 +14,35 @@ module ActiveCampaignWrapper
 
       def create(params)
         params = { contact: params }
-        @config.post('/contacts', body: params)
+        @config.post(
+          '/contacts',
+          body: ActiveCampaignWrapper::Helpers.normalize_body(params)
+        )
       end
 
       def sync(params)
         params = { contact: params }
-        @config.post('/contact/sync', body: params)
+        @config.post(
+          '/contact/sync',
+          body: ActiveCampaignWrapper::Helpers.normalize_body(params)
+        )
       end
 
       def update_list_status(params)
         params = { contact_list: params }
-        @config.post('/contactLists', body: params)
+        @config.post(
+          '/contactLists',
+          body: ActiveCampaignWrapper::Helpers.normalize_body(params)
+        )
       end
 
       def bulk_import(params)
         @config.post(
           '/import/bulk_import',
-          body: params,
-          skip_normalization: ActiveCampaignWrapper::API::Arguments::DEFINED_WITH_UNDERSCORE[:contact][:bulk_import]
+          body: ActiveCampaignWrapper::Helpers.normalize_body(
+            params,
+            ActiveCampaignWrapper::Api::Contact::Arguments::SNAKE_CASED[:bulk_import]
+          )
         )
       end
 
@@ -41,7 +52,10 @@ module ActiveCampaignWrapper
 
       def update(contact_id, params)
         params = { contact: params }
-        @config.put("/contacts/#{contact_id}", body: params)
+        @config.put(
+          "/contacts/#{contact_id}",
+          body: ActiveCampaignWrapper::Helpers.normalize_body(params)
+        )
       end
 
       def find(contact_id)

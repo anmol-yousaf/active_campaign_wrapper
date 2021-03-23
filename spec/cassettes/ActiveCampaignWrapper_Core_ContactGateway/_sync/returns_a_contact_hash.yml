@@ -1,0 +1,127 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<API_ENDPOINT>/api/3/contact/sync"
+    body:
+      encoding: UTF-8
+      string: '{"contact":{"email":"anmolyousaf94@gmail.com","firstName":"Anmol","lastName":"Yousaf","phone":"+491735728523"}}'
+    headers:
+      Api-Token:
+      - "<API_KEY>"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Tue, 23 Mar 2021 11:05:00 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1889'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=84497dc008e9ab90b54d8ddf481123de; path=/; HttpOnly
+      - __cfduid=de300f9a5460faa84f326ddbab10e5ce31616497499; expires=Thu, 22-Apr-21
+        11:04:59 GMT; path=/; domain=.api-us1.com; HttpOnly; SameSite=Lax
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth.api-us1.com
+      - em_acp_globalauth_cookie=e5bcf098-cee7-4fd5-8014-2ecace442c0d; path=/; domain=.wegohealth.api-us1.com;
+        secure; httponly
+      Access-Control-Allow-Headers:
+      - Content-Type, origin, x-requested-with
+      Access-Control-Allow-Methods:
+      - POST, GET
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      X-Content-Type-Options:
+      - nosniff
+      X-Envoy-Upstream-Service-Time:
+      - '256'
+      X-Request-Id:
+      - 0a86483f-b27c-4245-a9a6-17928626ad6f
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '09005b76a0000017db703de000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 63472e9dc98017db-DXB
+    body:
+      encoding: UTF-8
+      string: '{"contact":{"email":"anmolyousaf94@gmail.com","phone":"+491735728523","firstName":"Anmol","lastName":"Yousaf","email_empty":false,"cdate":"2021-03-23T06:05:00-05:00","udate":"2021-03-23T06:05:00-05:00","orgid":"","orgname":"","links":{"bounceLogs":"https:\/\/wegohealth.api-us1.com\/api\/3\/contacts\/113\/bounceLogs","contactAutomations":"https:\/\/wegohealth.api-us1.com\/api\/3\/contacts\/113\/contactAutomations?limit=1000&orders%5Blastdate%5D=DESC","contactData":"https:\/\/wegohealth.api-us1.com\/api\/3\/contacts\/113\/contactData","contactGoals":"https:\/\/wegohealth.api-us1.com\/api\/3\/contacts\/113\/contactGoals","contactLists":"https:\/\/wegohealth.api-us1.com\/api\/3\/contacts\/113\/contactLists","contactLogs":"https:\/\/wegohealth.api-us1.com\/api\/3\/contacts\/113\/contactLogs","contactTags":"https:\/\/wegohealth.api-us1.com\/api\/3\/contacts\/113\/contactTags","contactDeals":"https:\/\/wegohealth.api-us1.com\/api\/3\/contacts\/113\/contactDeals","deals":"https:\/\/wegohealth.api-us1.com\/api\/3\/contacts\/113\/deals","fieldValues":"https:\/\/wegohealth.api-us1.com\/api\/3\/contacts\/113\/fieldValues","geoIps":"https:\/\/wegohealth.api-us1.com\/api\/3\/contacts\/113\/geoIps","notes":"https:\/\/wegohealth.api-us1.com\/api\/3\/contacts\/113\/notes","organization":"https:\/\/wegohealth.api-us1.com\/api\/3\/contacts\/113\/organization","plusAppend":"https:\/\/wegohealth.api-us1.com\/api\/3\/contacts\/113\/plusAppend","trackingLogs":"https:\/\/wegohealth.api-us1.com\/api\/3\/contacts\/113\/trackingLogs","scoreValues":"https:\/\/wegohealth.api-us1.com\/api\/3\/contacts\/113\/scoreValues","accountContacts":"https:\/\/wegohealth.api-us1.com\/api\/3\/contacts\/113\/accountContacts","automationEntryCounts":"https:\/\/wegohealth.api-us1.com\/api\/3\/contacts\/113\/automationEntryCounts"},"hash":"0761fb88d19e6488717cc91c512907e1","id":"113","organization":""}}'
+  recorded_at: Tue, 23 Mar 2021 11:05:00 GMT
+- request:
+    method: delete
+    uri: "<API_ENDPOINT>/api/3/contacts/113"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Token:
+      - "<API_KEY>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 23 Mar 2021 11:05:01 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=db512a65795905a514f5b550fe7f90b2; path=/; HttpOnly
+      - __cfduid=dd2080c4f8a8e7a1b9d1954fbcefd63bc1616497501; expires=Thu, 22-Apr-21
+        11:05:01 GMT; path=/; domain=.api-us1.com; HttpOnly; SameSite=Lax
+      - em_acp_globalauth_cookie=de9912e4-5303-428c-bcdb-27fa808b083d; path=/; domain=.wegohealth.api-us1.com;
+        secure; httponly
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth.api-us1.com
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      X-Envoy-Upstream-Service-Time:
+      - '231'
+      X-Request-Id:
+      - a9a54c5c-e46a-4616-8bf1-e194ab4414e8
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '09005b7d2b000012c2ad949000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 63472ea83fdc12c2-DXB
+    body:
+      encoding: UTF-8
+      string: "{}"
+  recorded_at: Tue, 23 Mar 2021 11:05:01 GMT
+recorded_with: VCR 6.0.0

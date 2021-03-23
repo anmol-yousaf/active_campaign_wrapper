@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<API_ENDPOINT>/api/3/import/bulk_import"
+    body:
+      encoding: UTF-8
+      string: '{"contacts":[{"email":"someone@somewhere.com","first_name":"Jane","last_name":"Doe","phone":"123-456-7890","customer_acct_name":"ActiveCampaign","tags":["dictumst
+        aliquam augue quam sollicitudin rutrum"]}]}'
+    headers:
+      Api-Token:
+      - "<API_KEY>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 23 Mar 2021 11:04:47 GMT
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=24aa83338e9a135e80efaa391af7cac2; path=/; HttpOnly
+      - __cfduid=d297e806652951b899c601505fcf44bfe1616497486; expires=Thu, 22-Apr-21
+        11:04:46 GMT; path=/; domain=.api-us1.com; HttpOnly; SameSite=Lax
+      - em_acp_globalauth_cookie=c4da1329-5eb2-4087-b2da-6bd0ee5b29f5; path=/; domain=.wegohealth.api-us1.com;
+        secure; httponly
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth.api-us1.com
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      X-Envoy-Upstream-Service-Time:
+      - '262'
+      X-Request-Id:
+      - 54e962cf-868e-41ee-8de1-05fb36ebadd7
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '09005b414c000012be98019000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 63472e48799e12be-DXB
+    body:
+      encoding: UTF-8
+      string: '{"success":1,"queued_contacts":1,"batchId":"3840817e-6908-41cc-92a6-469478d8994a","message":"Contact
+        import queued"}'
+  recorded_at: Tue, 23 Mar 2021 11:04:47 GMT
+recorded_with: VCR 6.0.0

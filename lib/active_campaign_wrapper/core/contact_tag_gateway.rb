@@ -14,7 +14,10 @@ module ActiveCampaignWrapper
 
       def create(params)
         params = { contact_tag: params }
-        @config.post('/contactTags', body: params)
+        @config.post(
+          '/contactTags',
+          body: ActiveCampaignWrapper::Helpers.normalize_body(params)
+        )
       end
 
       def delete(contact_tag_id)

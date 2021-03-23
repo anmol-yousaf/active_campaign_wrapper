@@ -21,13 +21,14 @@ end
 RSpec.shared_context 'with existing contact tag', with_existing_contact_tag: true do
   include_context 'with contact tag params'
 
+  let!(:client) { ActiveCampaignWrapper::Client.new }
   let!(:contact_tag) do
-    response = client.create_contact_tag(contact_tag_params)
+    response = client.contact_tags.create(contact_tag_params)
     response.fetch(:contact_tag) { raise "HELL (contact tag creation failed) #{response}" }
   end
   let(:contact_tag_id) { contact_tag[:id] }
 
   after do
-    client.delete_contact_tag(contact_tag_id) if contact_tag_id
+    client.contact_tags.delete(contact_tag_id) if contact_tag_id
   end
 end

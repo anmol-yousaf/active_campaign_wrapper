@@ -3,7 +3,7 @@
 RSpec.shared_context 'with list params', with_list_params: true do
   let(:list_name)            { 'Awesome List' }
   let(:list_stringid)        { 'awesome-list' }
-  let(:list_sender_url)      { 'https://mhenrixon.com' }
+  let(:list_sender_url)      { 'https://workytical.com' }
   let(:list_sender_reminder) { 'This is why we are sending you this' }
   let(:list_params) do
     {

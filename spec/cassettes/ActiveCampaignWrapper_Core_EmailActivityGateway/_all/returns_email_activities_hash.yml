@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: "<API_ENDPOINT>/api/3/emailActivities"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Token:
+      - "<API_KEY>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 23 Mar 2021 10:30:12 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '906'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=77efde257ad4af768afc85208c9bd5bf; path=/; HttpOnly
+      - __cfduid=d14c73b8d268d3d98083f456c3f34faef1616495411; expires=Thu, 22-Apr-21
+        10:30:11 GMT; path=/; domain=.api-us1.com; HttpOnly; SameSite=Lax
+      - em_acp_globalauth_cookie=ae56d63d-63ad-4ef2-98ee-00041875eafe; path=/; domain=.wegohealth.api-us1.com;
+        secure; httponly
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth.api-us1.com
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      X-Envoy-Upstream-Service-Time:
+      - '94'
+      X-Request-Id:
+      - 2f24f856-153c-4c8b-bed3-d68176e6d538
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '09003b99b4000017e35f02f000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 6346fba2bff417e3-DXB
+    body:
+      encoding: UTF-8
+      string: '{"emailActivities":[{"subscriberid":"54","userid":"1","d_id":"0","account":null,"reltype":"SubscriberEmail","relid":"1","from_name":"Kristen
+        Long","fromAddress":"kristen.long@wegohealth.com","toAddress":"anmolyousaf.wg@gmail.com","ccAddress":"","subject":"Test
+        Email","message":"ABC\n\u00a0","messageHtml":"ABC<br>\n&nbsp;","tstamp":"2021-03-23T01:31:54-05:00","sentiment":null,"links":{"contact":"https:\/\/wegohealth.api-us1.com\/api\/3\/emailActivities\/1\/contact","deal":"https:\/\/wegohealth.api-us1.com\/api\/3\/emailActivities\/1\/deal","user":"https:\/\/wegohealth.api-us1.com\/api\/3\/emailActivities\/1\/user","reference":"https:\/\/wegohealth.api-us1.com\/api\/3\/emailActivities\/1\/reference","account":"https:\/\/wegohealth.api-us1.com\/api\/3\/emailActivities\/1\/account"},"id":"1","contact":"54","deal":null,"user":"1","reference":{"type":"contact-email","id":"1"}}],"meta":{"total":"1"}}'
+  recorded_at: Tue, 23 Mar 2021 10:30:12 GMT
+recorded_with: VCR 6.0.0
