@@ -170,7 +170,7 @@ client.lists.all
 
 <a name="contacts"/>
 
-#### Contacts (Create or Update) - [Api Reference](https://developers.activecampaign.com/reference#contact)
+#### Contacts - [Api Reference](https://developers.activecampaign.com/reference#contact)
 
 #### Create a contact
 
@@ -494,7 +494,7 @@ client.custom_field_values.create({
 
 **BODY PARAMS**
 - contact* (string/integer): ID of the contact whose field value you're updating
-- field (string/integer): ID of the custom field whose value you're updating for the contact
+- field* (string/integer): ID of the custom field whose value you're updating for the contact
 - value* (string): Value for the field that you're updating. For multi-select options this needs to be in the format of ||option1||option2||
 - useDefaults: If true, this will populate the missing required fields for this contact with default values
 
