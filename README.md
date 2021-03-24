@@ -190,6 +190,32 @@ client.contacts.create({
 - phone (integer): Phone number of the contact.
 - field_values (array): Array of contact's custom field values  [{field, value}]
 
+#### Create or update contact
+
+```ruby
+client.contacts.sync({
+  email: 'contact@email.com',
+  first_name:'first',
+  last_name: 'last'
+})
+```
+
+#### Update list status for a contact
+
+```ruby
+client.contacts.update_list_status({
+  list: list_id,
+  contact: contact_id,
+  status: 1
+})
+```
+
+**BODY PARAMS**
+- list* (string/integer):ID of the list to subscribe the contact to
+- contact* (string/integer): ID of the contact to subscribe to the list
+- status* (string/integer): Set to "1" to subscribe the contact to the list. Set to "2" to unsubscribe the contact from the list. WARNING: If you change a status from unsubscribed to active, you can re-subscribe a contact to a list from which they had manually unsubscribed.
+- sourceid (integer): Set to "4" when re-subscribing a contact to a list
+
 #### Retrieve a contact
 
 ```ruby
@@ -243,6 +269,44 @@ client.contacts.all
 - orders[score]  (string): Order contacts by score
 - in_group_lists (string): Set this to "true" in order to return only contacts that the current user has permissions to see.
 
+#### Bulk import contacts
+
+```ruby
+client.contacts.bulk_import({
+  contacts: [
+    {
+      email: 'someone@somewhere.com',
+      first_name: 'Jane',
+      last_name: 'Doe',
+      phone: '123-456-7890',
+      customer_acct_name: 'ActiveCampaign',
+      tags: [
+        'dictumst aliquam augue quam sollicitudin rutrum'
+      ]
+    }
+  ],
+  callback: {
+    url: "www.your_web_server.com",
+    request_type: "POST",
+    detailed_results: "true",
+    params: [
+      { "key": "", "value": "" }
+    ],
+    headers: [
+      { "key": "", "value": "" }
+    ]
+  }
+})
+```
+
+**BODY PARAMS**
+- contacts* (array of objects): An array of objects containing information about a single contact. Up to 250 contacts may be included in a single request. The suggested minimum number of contacts is 10. If less than that, then contact/sync api request should be used.
+- callback (object): Callback function to notify users when an import is complete.
+- url (string): The URL endpoint which the importer will make a request to once the import has completed.
+- request_type (string): Can be set to either “GET” or “POST”. Determines the type of HTTP request which will be sent to the specified endpoint.
+- detailed_results (string): When set to “true” and the requestType parameter is set to “POST”, the callback will include the number of successes and failures in the originating request, as well as an array of error messages for each failed contact.
+- params (array of objects): A list of parameters to include in the callback request. Add each parameter in the form of a key-value pair. For a GET request, each parameter will be appended to the end of the URL in a query string. For a POST request, parameters will be included in the body of the request.
+- headers (array of objects): A list of headers to include in the callback request. Add each header in the form of a key-value pair.
 
 ## Contributing
 
