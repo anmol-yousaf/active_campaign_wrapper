@@ -8,6 +8,11 @@ SimpleCov.start do
   add_filter 'lib/generators/templates/'
 end
 
+if ENV['CI'] == 'true'
+  require 'codecov'
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+end
+
 require 'dotenv/load'
 require 'bundler/setup'
 require 'pry'

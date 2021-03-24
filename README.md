@@ -1,3 +1,6 @@
+[![Build Status](https://api.travis-ci.com/anmol-yousaf/active_campaign_wrapper.svg?branch=main)](https://api.travis-ci.com/anmol-yousaf/active_campaign_wrapper)
+[![Test Coverage](https://codecov.io/gh/USERNAME/REPO_NAME/graph/badge.svg)](https://codecov.io/gh/USERNAME/REPO_NAME)
+
 # ActiveCampaignWrapper
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/active_campaign_wrapper`. To experiment with that code, run `bin/console` for an interactive prompt.
