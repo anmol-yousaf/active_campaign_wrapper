@@ -31,6 +31,13 @@ Or install it yourself as:
 * [Tags](#tags)
 * [Lists](#lists)
 * [Contacts](#tags)
+* [Contact Tags](#contact-tags)
+* [Contact Automations](#contact-automations)
+* [Contact Score Values](#contact-score-values)
+* [Custom Fields](#custom-fields)
+* [Custom Field Options](#custom-field-options)
+* [Custom Field Values](#custom-field-values)
+* [Email Activities](#email-activities)
 
 
 <a name="initialize"/>
@@ -60,8 +67,6 @@ client = ActiveCampaignWrapper::Client.new({
   api_token: 'your-token'
 })
 ```
-</a>
-
 <a name="tags"/>
 
 ### Tags - [Api Reference](https://developers.activecampaign.com/reference#tags)
@@ -161,7 +166,7 @@ client.lists.all
 ```
 
 **QUERY PARAMS** (Optional)
-- filters[name]  (string): Filter by the name of the list
+- filters[name]  (string): Filter by the name of the list.
 
 <a name="contacts"/>
 
@@ -307,6 +312,219 @@ client.contacts.bulk_import({
 - detailed_results (string): When set to “true” and the requestType parameter is set to “POST”, the callback will include the number of successes and failures in the originating request, as well as an array of error messages for each failed contact.
 - params (array of objects): A list of parameters to include in the callback request. Add each parameter in the form of a key-value pair. For a GET request, each parameter will be appended to the end of the URL in a query string. For a POST request, parameters will be included in the body of the request.
 - headers (array of objects): A list of headers to include in the callback request. Add each header in the form of a key-value pair.
+
+<a name="#contact-tags"/>
+
+### Contact Tags - [Api Reference](https://developers.activecampaign.com/reference#contact-tags)
+
+#### Retrieve all tags of a contact
+
+```ruby
+client.contact_tags.all(contact_id)
+```
+
+#### Add a tag to a contact
+
+```ruby
+client.contact_tags.create({
+  contact: contact_id,
+  tag: tag_id
+})
+```
+**BODY PARAMS**
+- contact* (integer): Contact's id
+- tag* (integer): Tag's id
+
+#### Retrieve a contact tag
+
+```ruby
+client.contact_tags.find(contact_tag_id)
+```
+
+#### Remove a tag from a contact
+
+```ruby
+client.contact_tags.delete(contact_tag_id)
+```
+<a name="#contact-automations"/>
+
+### Contact Automations - [Api Reference](https://developers.activecampaign.com/reference#list-all-contactautomations-for-contact)
+
+#### List all automations the contact is in
+
+```ruby
+client.contact_automations.all(contact_id)
+```
+
+<a name="#contact-score-values"/>
+
+### Contact Score Values - [Api Reference](https://developers.activecampaign.com/reference#list-all-contactautomations-for-contact)
+
+#### Retrieve a contact's score values
+
+```ruby
+client.contact_score_values.all(contact_id)
+```
+
+<a name="#email-activities"/>
+
+### Email Activities - [Api Reference](https://developers.activecampaign.com/reference#email-emailactivities)
+
+#### Retrieve all email activities
+
+```ruby
+client.email_activities.all
+```
+
+**QUERY PARAMS** (Optional)
+- filters[subscriberid]  (integer): Set this parameter to return only email activities belonging to a given subscriber.
+- filters[dealId]  (integer): Set this parameter to return only email activities belonging to a given deal.
+
+<a name="#custom-fields"/>
+
+### Custom Fields - [Api Reference](https://developers.activecampaign.com/reference#fields)
+
+#### Create a custom field
+
+```ruby
+client.custom_fields.create({
+  type: "textarea",
+  title: "Field Title",
+  descript: "Field description",
+  perstag: "Personalized Tag",
+  defval: "Defaut Value",
+  visible: 1,
+  ordernum: 1
+})
+```
+
+**BODY PARAMS**
+- title* (string): Title of the field being created
+- type* (string): Possible Values: dropdown, hidden, checkbox, date, text, datetime, textarea, NULL, listbox, radio
+- descript (string): Description of field being created
+- perstag (string): The perstag that represents the field being created
+- defval (string): Default value of the field being created
+- show_in_list (boolean): Show this field in the contact list view (Deprecated - no longer used)
+- visible (boolean): Show or hide this field when using the Form Builder
+- service (string): Possible Vales: nimble, contactually, mindbody, salesforce, highrise, google_spreadsheets, pipedrive, onepage, google_contacts, freshbooks, shopify, zendesk, etsy, NULL, bigcommerce, capsule, bigcommerce_oauth, sugarcrm, zohocrm, batchbook
+- ordernum (integer): Order of appearance in ‘My Fields’ tab.
+
+#### Retrieve a custom field
+
+```ruby
+client.custom_fields.find(field_id)
+```
+
+#### Update a custom field
+
+```ruby
+client.custom_fields.update(field_id, {
+  title: 'Updated Field Title'
+})
+```
+
+#### Delete a custom field
+
+```ruby
+client.custom_fields.delete(field_id)
+```
+
+#### Retrieve all custom fields
+
+```ruby
+client.custom_fields.all
+```
+
+**QUERY PARAMS** (Optional)
+- limit (integer): The number of fields returned per request.
+
+<a name="#custom-field-options"/>
+
+### Custom Fields Options - [Api Reference](https://developers.activecampaign.com/reference#create-custom-field-options)
+
+#### Create custom field options
+
+```ruby
+client.custom_field_options.create([
+  {
+    field: custom_field_id,
+    label: option_1_title,
+    value: option_1_value
+  },
+  {
+    field: custom_field_id,
+    label: option_2_title,
+    value: option_2_value
+  }
+])
+```
+
+**BODY PARAMS**
+- field* (integer): ID of the custom field to add options to
+- label (string): Name of the option
+- value* (string): Value of the option
+- orderid (integer): Order for displaying the custom field option
+- isdefault: Whether or not this option is the default value
+
+#### Retrieve a custom field option
+
+```ruby
+client.custom_field_options.find(field_option_id)
+```
+
+#### Delete a custom field option 
+
+```ruby
+client.custom_field_options.delete(field_option_id)
+```
+
+<a name="#custom-field-values"/>
+
+### Custom Fields Values - [Api Reference](https://developers.activecampaign.com/reference#fieldvalues)
+
+#### Create a custom field value
+
+```ruby
+client.custom_field_values.create({
+  contact: contact_id,
+  field: field_id,
+  value: value
+}, useDefaults: true)
+```
+
+**BODY PARAMS**
+- contact* (string/integer): ID of the contact whose field value you're updating
+- field (string/integer): ID of the custom field whose value you're updating for the contact
+- value* (string): Value for the field that you're updating. For multi-select options this needs to be in the format of ||option1||option2||
+- useDefaults: If true, this will populate the missing required fields for this contact with default values
+
+#### Retrieve a custom field value
+
+```ruby
+client.custom_field_values.find(field_value_id)
+```
+
+#### Update a custom field value
+
+```ruby
+client.custom_field_values.update(
+  field_value_id,
+  { value: value },
+  use_defaults: false
+)
+```
+
+#### Delete a custom field value 
+
+```ruby
+client.custom_field_values.delete(field_value_id)
+```
+
+#### Retrieve all custom field values
+
+```ruby
+client.custom_field_values.all
+```
 
 ## Contributing
 
