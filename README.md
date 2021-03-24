@@ -25,12 +25,16 @@ Or install it yourself as:
 
 ## Usage
 
-##### Table of Contents  
-[Initialize](#initialize)  
-[Tags](#tags)  
+##### Table of Contents
+
+* [Initialize](#initialize)
+* [Tags](#tags)
+* [Lists](#lists)
+* [Contacts](#tags)
 
 
 <a name="initialize"/>
+
 ### Initialize
 
 You can specify your Endpoint URL and API token in a config file looking like this.
@@ -57,7 +61,8 @@ client = ActiveCampaignWrapper::Client.new({
 })
 ```
 </a>
----
+
+<a name="tags"/>
 
 ### Tags - [Api Reference](https://developers.activecampaign.com/reference#tags)
 
@@ -70,12 +75,11 @@ client.tags.create({
   description: 'Tag description'
 })
 ```
-```
-BODY PARAMS
+**BODY PARAMS**
 - tag (string) : Name of the new tag
 - tag_type (string): Tag-type of the new tag. Possible Values: template, contact.
 - description (string): Description of the new tag
-```
+
 #### Retrieve a tag
 
 ```ruby
@@ -101,11 +105,11 @@ client.tags.delete(tag_id)
 ```ruby
 client.tags.all
 ```
-```
-QUERY PARAMS (Optional)
+
+**QUERY PARAMS** (Optional)
 - search (string): Filter by name of tag(s)
-```
----
+
+<a name="lists"/>
 
 ### Lists - [Api Reference](https://developers.activecampaign.com/reference#lists)
 
@@ -119,8 +123,7 @@ client.lists.create({
   sender_reminder: 'You are getting this notification as you have subscribed to our list.'
 })
 ```
-```
-BODY PARAMS
+**BODY PARAMS**
 - name* (string): Name of the list to create
 - stringid* (string): URL-safe list name. Example: 'list-name-sample'
 - sender_url* (string): The website URL this list is for.
@@ -130,7 +133,7 @@ BODY PARAMS
 - subscription_notify (string): Comma-separated list of email addresses to notify when a new subscriber joins this list.
 - unsubscription_notify (string): Comma-separated list of email addresses to notify when a subscriber unsubscribes from this list.
 - user (integer): User Id of the list owner. A list owner is able to control campaign branding. A property of list.userid also exists on this object; both properties map to the same list owner field and are being maintained in the response object for backward compatibility. If you post values for both list.user and list.userid, the value of list.user will be used.
-```
+
 #### Retrieve a list
 
 ```ruby
@@ -156,64 +159,90 @@ client.lists.delete(list_id)
 ```ruby
 client.lists.all
 ```
-```
-QUERY PARAMS (Optional)
-- filters[name] (string): Filter by the name of the list
-```
----
 
-#### Contacts (Create or Update) - [Api Reference](https://developers.activecampaign.com/reference#create-or-update-contact-new)
-#### Create a list
+**QUERY PARAMS** (Optional)
+- filters[name]  (string): Filter by the name of the list
 
-```ruby
-client.lists.create({
-  name: 'New List',
-  stringid: 'new-list',
-  sender_url:'https://workytical.com',
-  sender_reminder: 'You are getting this notification as you have subscribed to our list.'
-})
-```
-```
-BODY PARAMS
-- name* (string): Name of the list to create
-- stringid* (string): URL-safe list name. Example: 'list-name-sample'
-- sender_url* (string): The website URL this list is for.
-- sender_reminder* (string): A reminder for your contacts as to why they are on this list and you are messaging them.
-- send_last_broadcast (boolean): Boolean value indicating whether or not to send the last sent campaign to this list to a new subscriber upon subscribing. 1 = yes, 0 = no
-- carboncopy (string): Comma-separated list of email addresses to send a copy of all mailings to upon send
-- subscription_notify (string): Comma-separated list of email addresses to notify when a new subscriber joins this list.
-- unsubscription_notify (string): Comma-separated list of email addresses to notify when a subscriber unsubscribes from this list.
-- user (integer): User Id of the list owner. A list owner is able to control campaign branding. A property of list.userid also exists on this object; both properties map to the same list owner field and are being maintained in the response object for backward compatibility. If you post values for both list.user and list.userid, the value of list.user will be used.
-```
-#### Retrieve a list
+<a name="contacts"/>
+
+#### Contacts (Create or Update) - [Api Reference](https://developers.activecampaign.com/reference#contact)
+
+#### Create a contact
 
 ```ruby
-client.lists.find(list_id)
-```
-
-#### Update a list
-
-```ruby
-client.lists.update(list_id, {
-  name: 'Updated List Name'
+client.contacts.create({
+  email: 'contact@email.com',
+  first_name:'first',
+  last_name: 'last'
 })
 ```
 
-#### Delete a list
+**BODY PARAMS**
+- email* (string): Email address of the new contact. Example: 'test@example.com'
+- status (integer) Status of your contact. Possible Values: -1..3
+  - -1 Any
+  - 0 Unconfirmed
+  - 1 Active
+  - 2 Unsubscribed
+  - 3 Bounced
+- first_name (string): First name of the new contact.
+- last_name (string): Last name of the new contact.
+- phone (integer): Phone number of the contact.
+- field_values (array): Array of contact's custom field values  [{field, value}]
+
+#### Retrieve a contact
 
 ```ruby
-client.lists.delete(list_id)
+client.contacts.find(contact_id)
 ```
 
-#### Retrieve all lists
+#### Update a contact
 
 ```ruby
-client.lists.all
+client.contacts.update(contact_id, {
+  first_name: 'Updated Contact Name'
+})
 ```
+
+#### Delete a contact
+
+```ruby
+client.contacts.delete(contact_id)
 ```
-QUERY PARAMS (Optional)
-- filters[name] (string): Filter by the name of the list
+
+#### Retrieve all contacts
+
+```ruby
+client.contacts.all
 ```
+
+**QUERY PARAMS** (Optional)
+- ids (string): Filter contacts by ID.
+- email (string): Email address of the contact you want to get
+- email_like (string): Filter contacts that contain the given value in the email address
+- exclude (integer): Exclude from the response the contact with the given ID
+- formid (integer): Filter contacts associated with the given form
+- id_greater (integer): Only include contacts with an ID greater than the given ID
+- id_less (integer): Only include contacts with an ID less than the given ID
+- listid (string): Filter contacts associated with the given list
+- search (string): Filter contacts that match the given value in the contact names, organization, phone or email
+- segmentid (integer): Return only contacts that match a list segment (this param initially returns segment information, when it is run a second time it will return contacts that match the segment)
+- seriesid (integer): Filter contacts associated with the given automation
+- status (integer): -1..3
+- tagid (integer): Filter contacts associated with the given tag
+- filters[created_before]  (date) Filter contacts that were created prior to this date
+- filters[created_after]  (date): Filter contacts that were created after this date
+- filters[updated_before]  (date): Filter contacts that were updated before this date
+- filters[updated_after]  (date): Filter contacts that were updated after this date
+- waitid (integer): Filter by contacts in the wait queue of an automation block
+- orders[cdate]  (string): Order contacts by creation date
+- orders[email]  (string): Order contacts by email
+- orders[first_name]  (string): Order contacts by first name
+- orders[last_name]  (string): Order contacts by last name
+- orders[name]  (string): Order contacts by full name
+- orders[score]  (string): Order contacts by score
+- in_group_lists (string): Set this to "true" in order to return only contacts that the current user has permissions to see.
+
 
 ## Contributing
 
