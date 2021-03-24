@@ -1,6 +1,3 @@
-[![Build Status](https://api.travis-ci.com/anmol-yousaf/active_campaign_wrapper.svg?branch=main)](https://api.travis-ci.com/anmol-yousaf/active_campaign_wrapper)
-[![Test Coverage](https://codecov.io/gh/USERNAME/REPO_NAME/graph/badge.svg)](https://codecov.io/gh/USERNAME/REPO_NAME)
-
 # ActiveCampaignWrapper
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/active_campaign_wrapper`. To experiment with that code, run `bin/console` for an interactive prompt.
@@ -45,3 +42,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Code of Conduct
 
 Everyone interacting in the ActiveCampaignWrapper project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/anmol-yousaf/active_campaign_wrapper/blob/master/CODE_OF_CONDUCT.md).
+
+
+[![Build Status](https://api.travis-ci.com/anmol-yousaf/active_campaign_wrapper.svg?branch=main)](https://api.travis-ci.com/anmol-yousaf/active_campaign_wrapper)
+[![Test Coverage](https://codecov.io/gh/anmol-yousaf/active_campaign_wrapper/graph/badge.svg)](https://codecov.io/gh/anmol-yousaf/active_campaign_wrapper)
