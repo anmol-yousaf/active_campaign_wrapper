@@ -25,6 +25,12 @@ Or install it yourself as:
 
 ## Usage
 
+##### Table of Contents  
+[Initialize](#initialize)  
+[Tags](#tags)  
+
+
+<a name="initialize"/>
 ### Initialize
 
 You can specify your Endpoint URL and API token in a config file looking like this.
@@ -50,6 +56,7 @@ client = ActiveCampaignWrapper::Client.new({
   api_token: 'your-token'
 })
 ```
+</a>
 ---
 
 ### Tags - [Api Reference](https://developers.activecampaign.com/reference#tags)
@@ -98,6 +105,7 @@ client.tags.all
 QUERY PARAMS (Optional)
 - search (string): Filter by name of tag(s)
 ```
+---
 
 ### Lists - [Api Reference](https://developers.activecampaign.com/reference#lists)
 
@@ -154,102 +162,57 @@ QUERY PARAMS (Optional)
 ```
 ---
 
-### Sync contact (Create or Update) - [Api Reference](https://developers.activecampaign.com/reference#create-or-update-contact-new)
+#### Contacts (Create or Update) - [Api Reference](https://developers.activecampaign.com/reference#create-or-update-contact-new)
+#### Create a list
 
 ```ruby
-client.sync_contact({
-  contact: {
-    email:     'contact@email.com',
-    firstName: 'first',
-    lastName:  'last',
-    phone:     '12312312',
-    fieldValues: [
-      {
-        field: '1',
-        value: 'My Value'
-      },
-      {
-        field: '2',
-        value: 'My second value'
-      }
-    ]   
-  }
+client.lists.create({
+  name: 'New List',
+  stringid: 'new-list',
+  sender_url:'https://workytical.com',
+  sender_reminder: 'You are getting this notification as you have subscribed to our list.'
+})
+```
+```
+BODY PARAMS
+- name* (string): Name of the list to create
+- stringid* (string): URL-safe list name. Example: 'list-name-sample'
+- sender_url* (string): The website URL this list is for.
+- sender_reminder* (string): A reminder for your contacts as to why they are on this list and you are messaging them.
+- send_last_broadcast (boolean): Boolean value indicating whether or not to send the last sent campaign to this list to a new subscriber upon subscribing. 1 = yes, 0 = no
+- carboncopy (string): Comma-separated list of email addresses to send a copy of all mailings to upon send
+- subscription_notify (string): Comma-separated list of email addresses to notify when a new subscriber joins this list.
+- unsubscription_notify (string): Comma-separated list of email addresses to notify when a subscriber unsubscribes from this list.
+- user (integer): User Id of the list owner. A list owner is able to control campaign branding. A property of list.userid also exists on this object; both properties map to the same list owner field and are being maintained in the response object for backward compatibility. If you post values for both list.user and list.userid, the value of list.user will be used.
+```
+#### Retrieve a list
+
+```ruby
+client.lists.find(list_id)
+```
+
+#### Update a list
+
+```ruby
+client.lists.update(list_id, {
+  name: 'Updated List Name'
 })
 ```
 
-### Retrieve contact - [Api Reference](https://developers.activecampaign.com/reference#get-contact)
+#### Delete a list
 
 ```ruby
-client.retrieve_contact("contact_id")
+client.lists.delete(list_id)
 ```
 
-### Retrieve contact by email
-
-This will return an array of contacts.
+#### Retrieve all lists
 
 ```ruby
-client.retrieve_contact_by_email("email")
+client.lists.all
 ```
-
-### Retrieve lists - [Api Reference](https://developers.activecampaign.com/reference#retrieve-all-lists)
-
-```ruby
-client.retrieve_lists
 ```
-
-### Create tag - [Api Reference](https://developers.activecampaign.com/reference#tags)
-
-```ruby
-client.create_tag({ 
-    tag: "tag_name", tagType: "tag_type"  
-})
-```
-
-### Add a tag to contact - [Api Reference](https://developers.activecampaign.com/reference#create-contact-tag)
-
-It generates a relationship called contactTag containing an id.
-
-```ruby
-client.add_contact_tag({ 
-    contact: "contact_id", tag: "tag_id"
-})
-```
-
-### Remove a tag to contact - [Api Reference](https://developers.activecampaign.com/reference#delete-contact-tag)
-
-To remove a tag from contact just remove the relationship between them.
-
-```ruby
-client.remove_contact_tag("contact_tag_id)
-```
-
-### Create field value - [Api Reference](https://developers.activecampaign.com/reference#create-fieldvalue)
-
-It generates a relationship called fieldVaalue containing an id.
-
-```ruby
-client.create_field_value(
-  {
-    contact: 572218,
-    field: 2,
-    value: 'field_value'
-  }
-)
-```
-
-### Update a field value - [Api Reference](https://developers.activecampaign.com/reference#update-a-custom-field-value-for-contact)
-
-It updates a relationship called fieldVaalue containing an id.
-
-```ruby
-client.update_field_value(
-  803_383,
-  {
-    contact: 572218,
-    field: 2,
-    value: 'new_field_value_put'
-  }
-)
+QUERY PARAMS (Optional)
+- filters[name] (string): Filter by the name of the list
 ```
 
 ## Contributing
