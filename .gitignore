@@ -17,3 +17,4 @@ measurement/*
 spec/dummy/tmp/*
 spec/dummy/log/*.log
 .rspec_status
+Gemfile.lock
