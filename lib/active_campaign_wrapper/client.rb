@@ -15,6 +15,7 @@ require 'active_campaign_wrapper/core/contact_score_value_gateway'
 
 require 'active_campaign_wrapper/api/contact/arguments'
 require 'active_campaign_wrapper/api/list/arguments'
+require 'active_campaign_wrapper/api/custom_field/arguments'
 
 module ActiveCampaignWrapper
   class Client

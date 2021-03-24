@@ -1,0 +1,364 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<API_ENDPOINT>/api/3/contacts"
+    body:
+      encoding: UTF-8
+      string: '{"contact":{"email":"anmolyousaf94@gmail.com","firstName":"Anmol","lastName":"Yousaf","phone":"+491735728523"}}'
+    headers:
+      Api-Token:
+      - "<API_KEY>"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Wed, 24 Mar 2021 08:14:23 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2050'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=3ea4e980abbce9dfca8179aa8a05cedc; path=/; HttpOnly
+      - __cfduid=d683f1894b53e0d92614ab9f58fa080821616573662; expires=Fri, 23-Apr-21
+        08:14:22 GMT; path=/; domain=.api-us1.com; HttpOnly; SameSite=Lax
+      - em_acp_globalauth_cookie=85d6fb42-cf1d-4ba3-be84-f7ec786dc3fd; path=/; domain=.wegohealth1616524231.api-us1.com;
+        secure; httponly
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      Access-Control-Allow-Headers:
+      - Content-Type, origin, x-requested-with
+      Access-Control-Allow-Methods:
+      - POST, GET
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      X-Content-Type-Options:
+      - nosniff
+      X-Envoy-Upstream-Service-Time:
+      - '301'
+      X-Request-Id:
+      - 6478efef-e3cc-4b25-829a-af0d18de2810
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '0904e59e3a000014e5ba0f8000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 634e72105c8714e5-DXB
+    body:
+      encoding: UTF-8
+      string: '{"contact":{"email":"anmolyousaf94@gmail.com","phone":"+491735728523","firstName":"Anmol","lastName":"Yousaf","email_empty":false,"cdate":"2021-03-24T03:14:23-05:00","udate":"2021-03-24T03:14:23-05:00","orgid":"","orgname":"","links":{"bounceLogs":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/bounceLogs","contactAutomations":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/contactAutomations?limit=1000&orders%5Blastdate%5D=DESC","contactData":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/contactData","contactGoals":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/contactGoals","contactLists":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/contactLists","contactLogs":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/contactLogs","contactTags":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/contactTags","contactDeals":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/contactDeals","deals":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/deals","fieldValues":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/fieldValues","geoIps":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/geoIps","notes":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/notes","organization":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/organization","plusAppend":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/plusAppend","trackingLogs":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/trackingLogs","scoreValues":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/scoreValues","accountContacts":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/accountContacts","automationEntryCounts":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/automationEntryCounts"},"hash":"db6fdf578a9a6097e45bc164503708cb","id":"51","organization":""}}'
+  recorded_at: Wed, 24 Mar 2021 08:14:23 GMT
+- request:
+    method: post
+    uri: "<API_ENDPOINT>/api/3/fields"
+    body:
+      encoding: UTF-8
+      string: '{"field":{"title":"Custom text","type":"text","descript":"A custom
+        text field","isrequired":"0","perstag":"PERSTAG","defval":"Default value","visible":"1"}}'
+    headers:
+      Api-Token:
+      - "<API_KEY>"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Wed, 24 Mar 2021 08:14:27 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '467'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=286acbba7044c909b45f7910a0ff0eab; path=/; HttpOnly
+      - __cfduid=d88098c92aac39664fb739c98dacf04f41616573663; expires=Fri, 23-Apr-21
+        08:14:23 GMT; path=/; domain=.api-us1.com; HttpOnly; SameSite=Lax
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      - em_acp_globalauth_cookie=f9e5ef6f-eb78-48b4-a25a-107e74d157b0; path=/; domain=.wegohealth1616524231.api-us1.com;
+        secure; httponly
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      X-Envoy-Upstream-Service-Time:
+      - '321'
+      X-Request-Id:
+      - aeccf19f-5021-43df-b5d5-d2d03d166519
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '0904e5a11c000017dba399e000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 634e7214f8a317db-DXB
+    body:
+      encoding: UTF-8
+      string: '{"field":{"title":"Custom text","type":"text","descript":"A custom
+        text field","isrequired":"0","perstag":"PERSTAG","defval":"Default value","visible":"1","created_by":"1","updated_by":"1","cdate":"2021-03-24T03:14:25-05:00","udate":"2021-03-24T03:14:25-05:00","ordernum":1,"links":{"options":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/fields\/60\/options","relations":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/fields\/60\/relations"},"id":"60"}}'
+  recorded_at: Wed, 24 Mar 2021 08:14:27 GMT
+- request:
+    method: post
+    uri: "<API_ENDPOINT>/api/3/fieldValues"
+    body:
+      encoding: UTF-8
+      string: '{"fieldValue":{"contact":"51","field":"60","value":"Text field value"},"useDefaults":false}'
+    headers:
+      Api-Token:
+      - "<API_KEY>"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Wed, 24 Mar 2021 08:14:28 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2896'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=eca53f0fdadb2ffb15a5ed047fd2f7ea; path=/; HttpOnly
+      - __cfduid=d878bd0971e22a8ea071552b017473fa81616573667; expires=Fri, 23-Apr-21
+        08:14:27 GMT; path=/; domain=.api-us1.com; HttpOnly; SameSite=Lax
+      - em_acp_globalauth_cookie=7b807629-a688-467a-94f7-04ea681d7642; path=/; domain=.wegohealth1616524231.api-us1.com;
+        secure; httponly
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      X-Envoy-Upstream-Service-Time:
+      - '190'
+      X-Request-Id:
+      - 98d2da47-d918-4317-b1dd-e8422d7778ad
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '0904e5b09b000014d95c3cb000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 634e722dccc914d9-DXB
+    body:
+      encoding: UTF-8
+      string: '{"contacts":[{"cdate":"2021-03-24T03:14:23-05:00","email":"anmolyousaf94@gmail.com","phone":"+491735728523","firstName":"Anmol","lastName":"Yousaf","orgid":"0","orgname":"","segmentio_id":"","bounced_hard":"0","bounced_soft":"0","bounced_date":null,"ip":"0","ua":null,"hash":"db6fdf578a9a6097e45bc164503708cb","socialdata_lastcheck":null,"email_local":"","email_domain":"","sentcnt":"0","rating_tstamp":null,"gravatar":"0","deleted":"0","anonymized":"0","adate":null,"udate":"2021-03-24T03:14:28-05:00","edate":null,"deleted_at":null,"created_utc_timestamp":"2021-03-24
+        03:14:23","updated_utc_timestamp":"2021-03-24 03:14:28","created_timestamp":"2021-03-24
+        03:14:23","updated_timestamp":"2021-03-24 03:14:28","created_by":null,"updated_by":null,"email_empty":false,"links":{"bounceLogs":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/bounceLogs","contactAutomations":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/contactAutomations?limit=1000&orders%5Blastdate%5D=DESC","contactData":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/contactData","contactGoals":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/contactGoals","contactLists":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/contactLists","contactLogs":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/contactLogs","contactTags":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/contactTags","contactDeals":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/contactDeals","deals":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/deals","fieldValues":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/fieldValues","geoIps":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/geoIps","notes":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/notes","organization":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/organization","plusAppend":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/plusAppend","trackingLogs":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/trackingLogs","scoreValues":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/scoreValues","accountContacts":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/accountContacts","automationEntryCounts":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/contacts\/51\/automationEntryCounts"},"id":"51","organization":null}],"fieldValue":{"contact":"51","field":"60","value":"Text
+        field value","cdate":"2021-03-24T03:14:28-05:00","udate":"2021-03-24T03:14:28-05:00","links":{"owner":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/fieldValues\/34\/owner","field":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/fieldValues\/34\/field"},"owner":"51","id":"34"}}'
+  recorded_at: Wed, 24 Mar 2021 08:14:28 GMT
+- request:
+    method: delete
+    uri: "<API_ENDPOINT>/api/3/fieldValues/34"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Token:
+      - "<API_KEY>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 24 Mar 2021 08:14:29 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=c77d360711678f898e0b8c777f0766ff; path=/; HttpOnly
+      - __cfduid=dcda64e870c9a88369e18747bd5e3ba651616573668; expires=Fri, 23-Apr-21
+        08:14:28 GMT; path=/; domain=.api-us1.com; HttpOnly; SameSite=Lax
+      - em_acp_globalauth_cookie=404cb51c-47f9-4088-a47c-6677476833b2; path=/; domain=.wegohealth1616524231.api-us1.com;
+        secure; httponly
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      X-Envoy-Upstream-Service-Time:
+      - '178'
+      X-Request-Id:
+      - 28efe4cd-3970-4368-be37-6e006cab390d
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '0904e5b575000014d97b9af000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 634e7235890414d9-DXB
+    body:
+      encoding: UTF-8
+      string: "{}"
+  recorded_at: Wed, 24 Mar 2021 08:14:29 GMT
+- request:
+    method: delete
+    uri: "<API_ENDPOINT>/api/3/fields/60"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Token:
+      - "<API_KEY>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 24 Mar 2021 08:14:32 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=f4731a8559e0a72ee45b88ef9f634d7c; path=/; HttpOnly
+      - __cfduid=dd3ae769357be77ccd34c62a5855627e71616573670; expires=Fri, 23-Apr-21
+        08:14:30 GMT; path=/; domain=.api-us1.com; HttpOnly; SameSite=Lax
+      - em_acp_globalauth_cookie=04e2b19c-785a-456e-9356-4e5c29b4d37e; path=/; domain=.wegohealth1616524231.api-us1.com;
+        secure; httponly
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      X-Envoy-Upstream-Service-Time:
+      - '405'
+      X-Request-Id:
+      - 3137586c-62a9-4311-a82e-f5205a2d36b2
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '0904e5ba65000014e5f824a000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 634e723d6cb814e5-DXB
+    body:
+      encoding: UTF-8
+      string: "{}"
+  recorded_at: Wed, 24 Mar 2021 08:14:32 GMT
+- request:
+    method: delete
+    uri: "<API_ENDPOINT>/api/3/contacts/51"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Token:
+      - "<API_KEY>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 24 Mar 2021 08:14:35 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=251f69fe67312f502b916a7ac255a1a9; path=/; HttpOnly
+      - __cfduid=df407f621608ed9cd42c500b0a58214aa1616573672; expires=Fri, 23-Apr-21
+        08:14:32 GMT; path=/; domain=.api-us1.com; HttpOnly; SameSite=Lax
+      - em_acp_globalauth_cookie=46dfc91f-9a03-40c4-ac05-4e488146b466; path=/; domain=.wegohealth1616524231.api-us1.com;
+        secure; httponly
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      X-Envoy-Upstream-Service-Time:
+      - '419'
+      X-Request-Id:
+      - f95ed8ee-14c8-408d-8bc6-42d4d986fd4a
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '0904e5c4bf000012beb2a9e000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 634e724dfa2a12be-DXB
+    body:
+      encoding: UTF-8
+      string: "{}"
+  recorded_at: Wed, 24 Mar 2021 08:14:35 GMT
+recorded_with: VCR 6.0.0

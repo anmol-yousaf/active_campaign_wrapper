@@ -22,13 +22,14 @@ end
 RSpec.shared_context 'with existing text field value', with_existing_text_field_value: true do
   include_context 'with text field value params'
 
+  let!(:client) { ActiveCampaignWrapper::Client.new }
   let!(:field_value) do
-    response = client.create_field_value(field_value_params)
+    response = client.custom_field_values.create(field_value_params)
     response.fetch(:field_value) { raise "HELL (custom field value creation failed) #{response}" }
   end
   let(:field_value_id) { field_value[:id] }
 
   after do
-    client.delete_field_value(field_value_id) if field_value_id
+    client.custom_field_values.delete(field_value_id) if field_value_id
   end
 end

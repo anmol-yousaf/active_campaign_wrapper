@@ -1,0 +1,123 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<API_ENDPOINT>/api/3/contactTags"
+    body:
+      encoding: UTF-8
+      string: '{"contactTag":{"title":"Custom text","type":"text","descript":"A custom
+        text field","isrequired":"0","perstag":"PERSTAG","defval":"Default value","visible":"1"}}'
+    headers:
+      Api-Token:
+      - "<API_KEY>"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Wed, 24 Mar 2021 07:01:02 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '143'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=1ad7ef9780936d494c3bae4514c1b45a; path=/; HttpOnly
+      - __cfduid=d98bb0083cdd525629a7a343ed73a66b31616569261; expires=Fri, 23-Apr-21
+        07:01:01 GMT; path=/; domain=.api-us1.com; HttpOnly; SameSite=Lax
+      - em_acp_globalauth_cookie=0cd738be-bfc3-423d-a01f-b03c9b141833; path=/; domain=.wegohealth1616524231.api-us1.com;
+        secure; httponly
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      X-Envoy-Upstream-Service-Time:
+      - '325'
+      X-Request-Id:
+      - 91ff18d8-3467-41b2-85c9-857e7a479c37
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '0904a2745c000012c2b0bb3000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 634e069a2e4a12c2-DXB
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"title":"Invalid value for query parameter contactTag.tag","detail":"No
+        tag id provided","source":{"parameter":"contactTag.tag"}}]}'
+  recorded_at: Wed, 24 Mar 2021 07:01:02 GMT
+- request:
+    method: post
+    uri: "<API_ENDPOINT>/api/3/contactTags"
+    body:
+      encoding: UTF-8
+      string: '{"contactTag":{"title":"Custom text","type":"text","descript":"A custom
+        text field","isrequired":"0","perstag":"PERSTAG","defval":"Default value","visible":"1"}}'
+    headers:
+      Api-Token:
+      - "<API_KEY>"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Wed, 24 Mar 2021 07:01:03 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '143'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=bf00a50b4425a35a06f453a95b66bf1b; path=/; HttpOnly
+      - __cfduid=d8469e0b2906d9be42a5662c461835cd61616569262; expires=Fri, 23-Apr-21
+        07:01:02 GMT; path=/; domain=.api-us1.com; HttpOnly; SameSite=Lax
+      - em_acp_globalauth_cookie=81e61307-12df-4019-b6ba-7989d7fec1ab; path=/; domain=.wegohealth1616524231.api-us1.com;
+        secure; httponly
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      X-Envoy-Upstream-Service-Time:
+      - '262'
+      X-Request-Id:
+      - d1f719a2-a291-4d6a-a860-176e199c0fea
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '0904a27a59000017db6f1bc000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 634e06a3cde817db-DXB
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"title":"Invalid value for query parameter contactTag.tag","detail":"No
+        tag id provided","source":{"parameter":"contactTag.tag"}}]}'
+  recorded_at: Wed, 24 Mar 2021 07:01:03 GMT
+recorded_with: VCR 6.0.0

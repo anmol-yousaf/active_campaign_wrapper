@@ -14,7 +14,13 @@ module ActiveCampaignWrapper
 
       def create(params)
         params = { field: params }
-        @config.post('/fields', body: params)
+        @config.post(
+          '/fields',
+          body: ActiveCampaignWrapper::Helpers.normalize_body(
+            params,
+            ActiveCampaignWrapper::Api::CustomField::Arguments::SNAKE_CASED[:create]
+          )
+        )
       end
 
       def delete(field_id)
@@ -23,7 +29,13 @@ module ActiveCampaignWrapper
 
       def update(field_id, params)
         params = { field: params }
-        @config.put("/fields/#{field_id}", body: params)
+        @config.put(
+          "/fields/#{field_id}",
+          body: ActiveCampaignWrapper::Helpers.normalize_body(
+            params,
+            ActiveCampaignWrapper::Api::CustomField::Arguments::SNAKE_CASED[:create]
+          )
+        )
       end
 
       def find(field_id)
