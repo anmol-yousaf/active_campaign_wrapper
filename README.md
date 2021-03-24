@@ -32,7 +32,7 @@ You can specify your Endpoint URL and API token in a config file looking like th
 ```ruby
 ActiveCampaignWrapper.config do |config|
   config.endpoint_url = 'your-url'
-  config.endpoint_url = 'your-token'
+  config.api_token = 'your-token'
 end
 ```
 and then initialize the client like
@@ -46,8 +46,8 @@ You can pass the Endpoint URL and API token directly to the client.
 
 ```ruby
 client = ActiveCampaignWrapper::Client.new({
-    endpoint_url: 'your-url',
-    endpoint_url: 'your-token'
+  endpoint_url: 'your-url',
+  api_token: 'your-token'
 })
 ```
 ---
@@ -58,9 +58,9 @@ client = ActiveCampaignWrapper::Client.new({
 
 ```ruby
 client.tags.create({
-    tag: 'Tag Name',
-    tag_type: 'contact',
-    description: 'Tag description'
+  tag: 'Tag Name',
+  tag_type: 'contact',
+  description: 'Tag description'
 })
 ```
 ```
@@ -105,10 +105,10 @@ QUERY PARAMS (Optional)
 
 ```ruby
 client.lists.create({
-    name: 'New List',
-    stringid: 'new-list',
-    sender_url:'https://workytical.com',
-    sender_reminder: 'You are getting this notification as you have subscribed to our list.'
+  name: 'New List',
+  stringid: 'new-list',
+  sender_url:'https://workytical.com',
+  sender_reminder: 'You are getting this notification as you have subscribed to our list.'
 })
 ```
 ```
