@@ -7,8 +7,8 @@ module ActiveCampaignWrapper
     module_function
 
     def normalize_response(response)
-      raise ActiveCampaignWrapper::AuthorizationError.new(response.message) if response.unauthorized?
-      raise ActiveCampaignWrapper::Error.new(response.message) unless response.success?
+      raise ActiveCampaignWrapper::AuthorizationError, response.message if response.unauthorized?
+      raise ActiveCampaignWrapper::Error, response.message unless response.success?
 
       if response&.body.present?
         transform_keys(response, [:underscore])
