@@ -346,7 +346,7 @@ client.contact_tags.find(contact_tag_id)
 ```ruby
 client.contact_tags.delete(contact_tag_id)
 ```
-<a name="#contact-automations"/>
+<a name="contact-automations"/>
 
 ### Contact Automations - [Api Reference](https://developers.activecampaign.com/reference#list-all-contactautomations-for-contact)
 
