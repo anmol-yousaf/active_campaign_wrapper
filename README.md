@@ -30,7 +30,7 @@ Or install it yourself as:
 * [Initialize](#initialize)
 * [Tags](#tags)
 * [Lists](#lists)
-* [Contacts](#tags)
+* [Contacts](#contacts)
 * [Contact Tags](#contact-tags)
 * [Contact Automations](#contact-automations)
 * [Contact Score Values](#contact-score-values)
