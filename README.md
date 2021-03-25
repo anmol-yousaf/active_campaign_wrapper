@@ -489,14 +489,14 @@ client.custom_field_values.create({
   contact: contact_id,
   field: field_id,
   value: value
-}, useDefaults: true)
+}, use_defaults: true)
 ```
 
 **BODY PARAMS**
 - contact* (string/integer): ID of the contact whose field value you're updating
 - field* (string/integer): ID of the custom field whose value you're updating for the contact
 - value* (string): Value for the field that you're updating. For multi-select options this needs to be in the format of ||option1||option2||
-- useDefaults: If true, this will populate the missing required fields for this contact with default values
+- use_defaults: If true, this will populate the missing required fields for this contact with default values
 
 #### Retrieve a custom field value
 
