@@ -313,7 +313,7 @@ client.contacts.bulk_import({
 - params (array of objects): A list of parameters to include in the callback request. Add each parameter in the form of a key-value pair. For a GET request, each parameter will be appended to the end of the URL in a query string. For a POST request, parameters will be included in the body of the request.
 - headers (array of objects): A list of headers to include in the callback request. Add each header in the form of a key-value pair.
 
-<a name="#contact-tags"/>
+<a name="contact-tags"/>
 
 ### Contact Tags - [Api Reference](https://developers.activecampaign.com/reference#contact-tags)
 
@@ -356,7 +356,7 @@ client.contact_tags.delete(contact_tag_id)
 client.contact_automations.all(contact_id)
 ```
 
-<a name="#contact-score-values"/>
+<a name="contact-score-values"/>
 
 ### Contact Score Values - [Api Reference](https://developers.activecampaign.com/reference#list-all-contactautomations-for-contact)
 
@@ -366,7 +366,7 @@ client.contact_automations.all(contact_id)
 client.contact_score_values.all(contact_id)
 ```
 
-<a name="#email-activities"/>
+<a name="email-activities"/>
 
 ### Email Activities - [Api Reference](https://developers.activecampaign.com/reference#email-emailactivities)
 
@@ -380,7 +380,7 @@ client.email_activities.all
 - filters[subscriberid]  (integer): Set this parameter to return only email activities belonging to a given subscriber.
 - filters[dealId]  (integer): Set this parameter to return only email activities belonging to a given deal.
 
-<a name="#custom-fields"/>
+<a name="custom-fields"/>
 
 ### Custom Fields - [Api Reference](https://developers.activecampaign.com/reference#fields)
 
@@ -438,7 +438,7 @@ client.custom_fields.all
 **QUERY PARAMS** (Optional)
 - limit (integer): The number of fields returned per request.
 
-<a name="#custom-field-options"/>
+<a name="custom-field-options"/>
 
 ### Custom Fields Options - [Api Reference](https://developers.activecampaign.com/reference#create-custom-field-options)
 
@@ -478,7 +478,7 @@ client.custom_field_options.find(field_option_id)
 client.custom_field_options.delete(field_option_id)
 ```
 
-<a name="#custom-field-values"/>
+<a name="custom-field-values"/>
 
 ### Custom Fields Values - [Api Reference](https://developers.activecampaign.com/reference#fieldvalues)
 
