@@ -34,10 +34,10 @@ Or install it yourself as:
 * [Contact Tags](#contact-tags)
 * [Contact Automations](#contact-automations)
 * [Contact Score Values](#contact-score-values)
+* [Email Activities](#email-activities)
 * [Custom Fields](#custom-fields)
 * [Custom Field Options](#custom-field-options)
 * [Custom Field Values](#custom-field-values)
-* [Email Activities](#email-activities)
 
 
 <a name="initialize"/>
