@@ -29,8 +29,8 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'activesupport', '>= 5.2.4.3'
-  spec.add_dependency 'httparty', '>= 0.14'
+  spec.add_dependency 'activesupport', '>= 4.0', '< 8.0'
+  spec.add_dependency 'httparty', '>= 0.14', '< 0.19'
 
   spec.add_development_dependency 'bundler', '~> 2.1.4'
   spec.add_development_dependency 'codecov', '~> 0.1'
