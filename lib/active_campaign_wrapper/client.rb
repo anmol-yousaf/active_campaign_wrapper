@@ -13,6 +13,7 @@ require 'active_campaign_wrapper/core/contact_tag_gateway'
 require 'active_campaign_wrapper/core/contact_automation_gateway'
 require 'active_campaign_wrapper/core/contact_score_value_gateway'
 require 'active_campaign_wrapper/core/group_gateway'
+require 'active_campaign_wrapper/core/list_group_gateway'
 
 require 'active_campaign_wrapper/api/contact/arguments'
 require 'active_campaign_wrapper/api/list/arguments'
@@ -33,47 +34,51 @@ module ActiveCampaignWrapper
     end
 
     def tags
-      TagGateway.new(self)
+      @tags ||= TagGateway.new(self)
     end
 
     def contacts
-      ContactGateway.new(self)
+      @contacts ||= ContactGateway.new(self)
     end
 
     def email_activities
-      EmailActivityGateway.new(self)
+      @email_activities ||= EmailActivityGateway.new(self)
     end
 
     def contact_tags
-      ContactTagGateway.new(self)
+      @contact_tags ||= ContactTagGateway.new(self)
     end
 
     def contact_score_values
-      ContactScoreValueGateway.new(self)
+      @contact_score_values ||= ContactScoreValueGateway.new(self)
     end
 
     def contact_automations
-      ContactAutomationGateway.new(self)
+      @contact_automations ||= ContactAutomationGateway.new(self)
     end
 
     def custom_fields
-      CustomFieldGateway.new(self)
+      @custom_fields ||= CustomFieldGateway.new(self)
     end
 
     def custom_field_options
-      CustomFieldOptionGateway.new(self)
+      @custom_field_options ||= CustomFieldOptionGateway.new(self)
     end
 
     def custom_field_values
-      CustomFieldValueGateway.new(self)
+      @custom_field_values ||= CustomFieldValueGateway.new(self)
     end
 
     def lists
-      ListGateway.new(self)
+      @lists ||= ListGateway.new(self)
     end
 
     def groups
-      GroupGateway.new(self)
+      @groups ||= GroupGateway.new(self)
+    end
+
+    def list_groups
+      @list_groups ||= ListGroupGateway.new(self)
     end
   end
 end

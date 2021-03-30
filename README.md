@@ -30,6 +30,7 @@ Or install it yourself as:
 * [Initialize](#initialize)
 * [Tags](#tags)
 * [Lists](#lists)
+* [ListGroups](#list-groups)
 * [Contacts](#contacts)
 * [Contact Tags](#contact-tags)
 * [Contact Automations](#contact-automations)
@@ -167,6 +168,40 @@ client.lists.all
 
 **QUERY PARAMS** (Optional)
 - filters[name]  (string): Filter by the name of the list.
+
+<a name="list-groups"/>
+
+### ListGroups - [Api Reference](https://developers.activecampaign.com/reference#create-a-list-group-permission)
+
+#### Create a list group permission
+
+```ruby
+client.list_groups.create({
+  listid: list_id,
+  groupid: group_id
+})
+```
+**BODY PARAMS**
+- listid* (integer): ID of the list
+- groupid* (integer): ID of the group that list should be associated with
+
+#### Retrieve a list group permission
+
+```ruby
+client.list_groups.find(list_group_id)
+```
+
+#### Delete a list group permission
+
+```ruby
+client.list_groups.delete(list_group_id)
+```
+
+#### Retrieve all list group permissions
+
+```ruby
+client.list_groups.all
+```
 
 <a name="contacts"/>
 
