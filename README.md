@@ -184,12 +184,6 @@ client.contacts.create({
 
 **BODY PARAMS**
 - email* (string): Email address of the new contact. Example: 'test@example.com'
-- status (integer) Status of your contact. Possible Values: -1..3
-  - -1 Any
-  - 0 Unconfirmed
-  - 1 Active
-  - 2 Unsubscribed
-  - 3 Bounced
 - first_name (string): First name of the new contact.
 - last_name (string): Last name of the new contact.
 - phone (integer): Phone number of the contact.
@@ -218,7 +212,14 @@ client.contacts.update_list_status({
 **BODY PARAMS**
 - list* (string/integer):ID of the list to subscribe the contact to
 - contact* (string/integer): ID of the contact to subscribe to the list
-- status* (string/integer): Set to "1" to subscribe the contact to the list. Set to "2" to unsubscribe the contact from the list. WARNING: If you change a status from unsubscribed to active, you can re-subscribe a contact to a list from which they had manually unsubscribed.
+- status* (string/integer): Possible Values: -1..3
+  - -1 Any
+  - 0 Unconfirmed
+  - 1 Active
+  - 2 Unsubscribed
+  - 3 Bounced
+  
+  Set to "1" to subscribe the contact to the list. Set to "2" to unsubscribe the contact from the list. WARNING: If you change a status from unsubscribed to active, you can re-subscribe a contact to a list from which they had manually unsubscribed.
 - sourceid (integer): Set to "4" when re-subscribing a contact to a list
 
 #### Retrieve a contact
@@ -259,7 +260,6 @@ client.contacts.all
 - search (string): Filter contacts that match the given value in the contact names, organization, phone or email
 - segmentid (integer): Return only contacts that match a list segment (this param initially returns segment information, when it is run a second time it will return contacts that match the segment)
 - seriesid (integer): Filter contacts associated with the given automation
-- status (integer): -1..3
 - tagid (integer): Filter contacts associated with the given tag
 - filters[created_before]  (date) Filter contacts that were created prior to this date
 - filters[created_after]  (date): Filter contacts that were created after this date
