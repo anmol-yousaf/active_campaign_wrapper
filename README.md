@@ -205,7 +205,7 @@ client.list_groups.all
 
 <a name="contacts"/>
 
-#### Contacts - [Api Reference](https://developers.activecampaign.com/reference#contact)
+### Contacts - [Api Reference](https://developers.activecampaign.com/reference#contact)
 
 #### Create a contact
 
