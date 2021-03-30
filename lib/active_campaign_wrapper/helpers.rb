@@ -7,8 +7,11 @@ module ActiveCampaignWrapper
     module_function
 
     def normalize_response(response)
-      raise ActiveCampaignWrapper::AuthorizationError, response.message if response.unauthorized?
-      raise ActiveCampaignWrapper::Error, response.message unless response.success?
+      raise ActiveCampaignWrapper::Forbidden, response['message'] if response.forbidden?
+      raise ActiveCampaignWrapper::NotFound, response['message'] if response.not_found?
+      raise ActiveCampaignWrapper::UnprocessableEntity, response['errors']&.join(', ') || response['error'] if response.unprocessable_entity?
+      raise ActiveCampaignWrapper::TooManyRequests, response['message'] if response.too_many_requests?
+      raise ActiveCampaignWrapper::Error, response['message'] unless response.success?
 
       if response&.body.present?
         transform_keys(response, [:underscore])

@@ -17,5 +17,11 @@ module ActiveCampaignWrapper
 
   class Error < StandardError; end
 
-  class AuthorizationError < StandardError; end
+  class Forbidden < StandardError; end
+
+  class UnprocessableEntity < StandardError; end
+
+  class NotFound < StandardError; end
+
+  class TooManyRequests < StandardError; end
 end
