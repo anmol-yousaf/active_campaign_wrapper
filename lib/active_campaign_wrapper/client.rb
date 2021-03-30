@@ -12,10 +12,12 @@ require 'active_campaign_wrapper/core/custom_field_value_gateway'
 require 'active_campaign_wrapper/core/contact_tag_gateway'
 require 'active_campaign_wrapper/core/contact_automation_gateway'
 require 'active_campaign_wrapper/core/contact_score_value_gateway'
+require 'active_campaign_wrapper/core/group_gateway'
 
 require 'active_campaign_wrapper/api/contact/arguments'
 require 'active_campaign_wrapper/api/list/arguments'
 require 'active_campaign_wrapper/api/custom_field/arguments'
+require 'active_campaign_wrapper/api/group/arguments'
 
 module ActiveCampaignWrapper
   class Client
@@ -68,6 +70,10 @@ module ActiveCampaignWrapper
 
     def lists
       ListGateway.new(self)
+    end
+
+    def groups
+      GroupGateway.new(self)
     end
   end
 end
