@@ -171,7 +171,7 @@ client.lists.all
 
 <a name="list-groups"/>
 
-### ListGroups - [Api Reference](https://developers.activecampaign.com/reference#create-a-list-group-permission)
+### List Groups - [Api Reference](https://developers.activecampaign.com/reference#create-a-list-group-permission)
 
 #### Create a list group permission
 
