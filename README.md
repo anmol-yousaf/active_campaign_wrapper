@@ -38,7 +38,7 @@ Or install it yourself as:
 * [Custom Fields](#custom-fields)
 * [Custom Field Options](#custom-field-options)
 * [Custom Field Values](#custom-field-values)
-
+* [Groups](#groups)
 
 <a name="initialize"/>
 
@@ -524,6 +524,101 @@ client.custom_field_values.delete(field_value_id)
 
 ```ruby
 client.custom_field_values.all
+```
+<a name="groups"/>
+
+### Groups - [Api Reference](https://developers.activecampaign.com/reference#groups)
+
+#### Create a group
+
+```ruby
+client.groups.create({
+  title: 'Admin',
+  descript: 'This is a group for admin users (people that can manage content)'
+})
+```
+**BODY PARAMS**
+- title* (string): Title of the group to be created
+- descript (string): Group description
+- pg_message_add (boolean): Permission for adding messages
+- unsubscribelink (boolean): Whether or not to force unsubscribe links
+- optinconfirm (boolean): Whether or not to force optin confirm for this group
+- pg_list_add (boolean): Permission for adding lists
+- pg_list_edit (boolean): Permission for editing lists
+- pg_list_delete (boolean): Permission for deleting lists
+- pg_list_headers (boolean): Permission for managing custom email headers
+- pg_list_emailaccount (boolean): Permission for managing Unsubscribe By Email
+- pg_list_bounce (boolean): Permission for accessing list bounce settings
+- pg_message_edit (boolean): Permission for editing messages
+- pg_message_delete (boolean): Permission for deleting messages
+- pg_message_send (boolean): Permission for sending messages
+- pg_contact_add (boolean): Permission for adding contacts
+- pg_contact_edit (boolean): Permission for editing contacts
+- pg_contact_delete (boolean): Permission for deleting contacts
+- pg_contact_merge (boolean): Permission for merging contacts
+- pg_contact_import (boolean): Permission for importing contacts
+- pg_contact_approve (boolean): Permission for approving contacts
+- pg_contact_export (boolean): Permission for exporting contacts
+- pg_contact_sync (boolean): Permission for syncing contacts
+- pg_contact_filters (boolean): Permission for managing contact list segments
+- pg_contact_actions (boolean): Permission for managing contact actions
+- pg_contact_fields (boolean): Permission for managing contact custom fields
+- pg_user_add (boolean): Permission for adding users
+- pg_user_edit (boolean): Permission for editing users
+- pg_user_delete (boolean): Permission for deleting users
+- pg_group_add (boolean): Permission for adding groups
+- pg_group_edit (boolean): Permission for editing groups
+- pg_group_delete (boolean): Permission for deleting groups
+- pg_template_add (boolean): Permission for adding templates
+- pg_template_edit (boolean): Permission for editing templates
+- pg_template_delete (boolean): Permission for deleting templates
+- pg_personalization_add (boolean): Permission for adding personalization tags
+- pg_personalization_edit (boolean): Permission for editing personalization tags
+- pg_personalization_delete (boolean): Permission for deleting personalization tags
+- pg_automation_manage (boolean): pgFormEdit (boolean): Permission for editing subscription forms
+- pg_reports_campaign (boolean): Permission for viewing campaign reports
+- pg_reports_list (boolean): Permission for viewing list reports
+- pg_reports_user (boolean): Permission for viewing user reports
+- pg_startup_reports (boolean): Campaign ID of last campaign report viewed to decide whether to show link on startup
+- pg_reports_trend (boolean): Permission for viewing trend reports
+- pg_startup_gettingstarted (boolean): Whether or not to show the "getting started" tutorial on overview page
+- pg_deal (boolean): Permission for viewing deals
+- pg_deal_delete (boolean): Permission for deleting deals
+- pg_deal_reassign (boolean): Permission for reassigning deals
+- pg_deal_group_add (boolean): Permission for adding deal groups
+- pg_deal_group_edit (boolean): Permission for editing deal groups
+- pg_deal_group_delete (boolean): Permission for deleting deals groups
+- pg_saved_responses_manage (boolean): Permission for managing saved responses
+- pg_tag_manage (boolean): Permission for managing tags
+- req_approval (boolean): Whether or not this group requires all campaigns to be approved
+- req_approval_1st (boolean): Whether or not this group requires first campaign to be approved
+- req_approval_notify_string (string): Who to notify for approval related issues (email)
+- socialdata (boolean): Whether or not to show social links in campaigns sent from this group
+
+#### Retrieve a group
+
+```ruby
+client.groups.find(group_id)
+```
+
+#### Update a group
+
+```ruby
+client.groups.update(group_id, {
+  title: 'Updated Group Title'
+})
+```
+
+#### Delete a group
+
+```ruby
+client.groups.delete(group_id)
+```
+
+#### List all groups
+
+```ruby
+client.groups.all
 ```
 
 ## Contributing
