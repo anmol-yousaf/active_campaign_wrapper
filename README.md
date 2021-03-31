@@ -30,7 +30,7 @@ Or install it yourself as:
 * [Initialize](#initialize)
 * [Tags](#tags)
 * [Lists](#lists)
-* [ListGroups](#list-groups)
+* [List Groups](#list-groups)
 * [Contacts](#contacts)
 * [Contact Tags](#contact-tags)
 * [Contact Automations](#contact-automations)
@@ -172,7 +172,7 @@ client.lists.all
 
 <a name="list-groups"/>
 
-### ListGroups - [Api Reference](https://developers.activecampaign.com/reference#create-a-list-group-permission)
+### List Groups - [Api Reference](https://developers.activecampaign.com/reference#create-a-list-group-permission)
 
 #### Create a list group permission
 
@@ -206,7 +206,7 @@ client.list_groups.all
 
 <a name="contacts"/>
 
-#### Contacts - [Api Reference](https://developers.activecampaign.com/reference#contact)
+### Contacts - [Api Reference](https://developers.activecampaign.com/reference#contact)
 
 #### Create a contact
 
