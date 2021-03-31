@@ -16,6 +16,7 @@ require 'active_campaign_wrapper/core/group_gateway'
 require 'active_campaign_wrapper/core/list_group_gateway'
 require 'active_campaign_wrapper/core/user_gateway'
 require 'active_campaign_wrapper/core/template_gateway'
+require 'active_campaign_wrapper/core/task_type_gateway'
 
 require 'active_campaign_wrapper/api/contact/arguments'
 require 'active_campaign_wrapper/api/list/arguments'
@@ -89,6 +90,10 @@ module ActiveCampaignWrapper
 
     def templates
       @templates ||= TemplateGateway.new(self)
+    end
+
+    def task_types
+      @task_types ||= TaskTypeGateway.new(self)
     end
   end
 end

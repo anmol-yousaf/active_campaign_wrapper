@@ -43,6 +43,7 @@ Or install it yourself as:
 * [Users](#users)
 * [Groups](#groups)
 * [Templates](#templates)
+* [Task Types](#task-types)
 
 <a name="initialize"/>
 
@@ -741,13 +742,58 @@ client.templates.find(template_id)
 #### Delete a template
 
 ```ruby
-client.templates.delete(templates_id)
+client.templates.delete(template_id)
 ```
 
 #### List all templates
 
 ```ruby
 client.templates.all
+```
+
+<a name="task-types"/>
+
+### Task Types - [Api Reference](https://developers.activecampaign.com/reference#deal-task-types)
+
+#### Create a task type
+
+```ruby
+client.task_types.create({
+  title: 'Call'
+})
+```
+**BODY PARAMS**
+- title* (string): Deal task type's title. The title should be unique among deal task types.
+
+#### Retrieve a task type
+
+```ruby
+client.task_types.find(task_type_id)
+```
+#### Update a task type
+
+```ruby
+client.task_types.update(task_types, {
+  title: 'New super cool title'
+})
+```
+
+#### Delete a task type
+
+```ruby
+client.task_types.delete(task_types)
+```
+
+#### List all task types
+
+```ruby
+client.task_types.all
+```
+
+#### Move tasks to another task type
+
+```ruby
+client.task_types.move_tasks(from_task_type_id, to_task_type_id)
 ```
 
 ## Contributing

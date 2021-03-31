@@ -94,4 +94,10 @@ RSpec.describe ActiveCampaignWrapper::Client do
       expect(client.templates).to be_a(ActiveCampaignWrapper::Core::TemplateGateway)
     end
   end
+
+  describe '#task_types' do
+    it 'returns a TaskTypeGateway object' do
+      expect(client.task_types).to be_a(ActiveCampaignWrapper::Core::TaskTypeGateway)
+    end
+  end
 end
