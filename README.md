@@ -4,6 +4,7 @@
 [![Test Coverage](https://codecov.io/gh/anmol-yousaf/active_campaign_wrapper/graph/badge.svg)](https://codecov.io/gh/anmol-yousaf/active_campaign_wrapper)
 
 This library is designed to help ruby/rails based applications communicate with the publicly available REST API for ActiveCampaign.
+It also supports a lot of functionality which is currently undocumented in the REST API.
 
 If you are unfamiliar with the ActiveCampaign REST API, you should first read the documentation located at https://developers.activecampaign.com/reference.
 
@@ -41,6 +42,7 @@ Or install it yourself as:
 * [Custom Field Values](#custom-field-values)
 * [Users](#users)
 * [Groups](#groups)
+* [Templates](#templates)
 
 <a name="initialize"/>
 
@@ -724,6 +726,28 @@ client.groups.delete(group_id)
 
 ```ruby
 client.groups.all
+```
+
+<a name="templates"/>
+
+### Templates - [Api Reference](https://developers.activecampaign.com/reference#templates)
+
+#### Retrieve a template
+
+```ruby
+client.templates.find(template_id)
+```
+
+#### Delete a template
+
+```ruby
+client.templates.delete(templates_id)
+```
+
+#### List all templates
+
+```ruby
+client.templates.all
 ```
 
 ## Contributing

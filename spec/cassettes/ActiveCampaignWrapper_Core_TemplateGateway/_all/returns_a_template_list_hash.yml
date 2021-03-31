@@ -1,0 +1,256 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: "<API_ENDPOINT>/api/3/templates"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Token:
+      - "<API_KEY>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 31 Mar 2021 08:26:20 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=e3c45e781f444c8ddc1fac13dc794ef0; path=/; HttpOnly
+      - __cfduid=df386e652d75dc8e06108c58fa2fb0acd1617179180; expires=Fri, 30-Apr-21
+        08:26:20 GMT; path=/; domain=.api-us1.com; HttpOnly; SameSite=Lax
+      - em_acp_globalauth_cookie=1162f03a-563b-4150-9a7d-c895636d0440; path=/; domain=.wegohealth1616524231.api-us1.com;
+        secure; httponly
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      - em_acp_globalauth_cookie=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0;
+        path=/; domain=.wegohealth1616524231.api-us1.com
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      X-Envoy-Upstream-Service-Time:
+      - '93'
+      X-Request-Id:
+      - 1418f0c5-691c-4c73-a98e-84f629a96b33
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '0928fd1624000014d92c2d0000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 638831369c1c14d9-DXB
+    body:
+      encoding: ASCII-8BIT
+      string: '{"templates":[{"userid":"1","ed_instanceid":"1","ed_version":"2","name":"Test","subject":"","content":"<!DOCTYPE
+        html PUBLIC \"-\/\/W3C\/\/DTD XHTML 1.0 Transitional\/\/EN\" \"http:\/\/www.w3.org\/TR\/xhtml1\/DTD\/xhtml1-transitional.dtd\">\n<html
+        lang=\"en\" style=\"margin: 0; outline: none; padding: 0;\"><head><!--[if
+        !mso]><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><!--<![endif]--><meta
+        http-equiv=\"Content-Type\" content=\"text\/html; charset=utf-8\"><meta http-equiv=\"Content-Language\"
+        content=\"en-us\"><meta name=\"format-detection\" content=\"telephone=no\"><meta
+        name=\"format-detection\" content=\"date=no\"><meta name=\"format-detection\"
+        content=\"address=no\"><meta name=\"format-detection\" content=\"email=no\"><title>Preview<\/title><style
+        data-ac-keep=\"true\"> .ExternalClass { width: 100%; background: inherit;
+        background-color: inherit; } .ExternalClass p, .ExternalClass ul, .ExternalClass
+        ol { Margin: 0; } .undoreset div p, .undoreset p { margin-bottom: 20px; }
+        div[class^=\"aolmail_divbody\"] { overflow: auto; } [owa] #ac-footer { padding:
+        20px 0px !important; background: inherit; background-color: inherit; } <\/style><style
+        data-ac-keep=\"true\">\n@media only screen and (max-width: 600px) { \/*-------------------------------------------------------------------------*\\
+        Abandoned Cart widget \\*------------------------------------------------------------------------*\/
+        .td_abandoned-cart img {display: block;padding-right: 0 !important;padding-bottom:
+        0 !important;width: 100% !important;max-width: 100% !important;height: auto
+        !important;} body { padding: 0!important; font-size:1em!important; } * { -webkit-box-sizing:
+        border-box; -moz-box-sizing: border-box; box-sizing: border-box; } *[class].divbody
+        {-webkit-text-size-adjust:none !important; width:auto !important;} *[class].td_picture
+        img {width:auto !important;} *[class].td_text { line-height: 110%; } *[class].td_button
+        { width: auto; } \/* Collapse all block elements *\/ :not(.body) table { display:
+        block!important; float:none!important; border-collapse:collapse !important;
+        width:100% !important; min-width:100% !important; clear:both!important; }
+        :not(.body) thead, :not(.body) tbody, :not(.body) tr { display:block!important;
+        float:none!important; width:100% !important; } :not(.body) th, :not(.body)
+        td, :not(.body) p { display:block!important; float:none!important; width:100%
+        !important; clear:both!important; } \/* Remove browser default styling for
+        elements *\/ ul, ol { margin-left: 20px; margin-bottom: 10px; margin-top:
+        10px; -webkit-margin-before: 0; -webkit-margin-after: 0; -webkit-padding-start:
+        0; } \/* Set default height for spacer once collapse *\/ *[class].spacer {
+        height: auto!important; } a[href^=date]{ color:inherit !important; text-decoration:none
+        !important;} a[href^=telephone]{ color:inherit !important; text-decoration:none
+        !important;} a[href^=address]{ color:inherit !important; text-decoration:none
+        !important;} a[href^=email]{ color:inherit !important; text-decoration:none
+        !important;} \/* Default table cell height *\/ td[height=\"12\"]{height:12px!important;font-size:12px!important;line-height:12px!important;}
+        \/*-------------------------------------------------------------------------*\\
+        Product Widget \\*-------------------------------------------------------------------------*\/
+        .td_product > div { float: none !important; width: 100% !important; margin-bottom:
+        20px !important; } .td_product > div img { width: 75% !important; } \/* Default
+        social icons *\/ *[class].ac-social-icon-16 {width:16px !important; height:16px
+        !important;} *[class].ac-social-icon-24 {width:24px !important; height:24px
+        !important;} *[class].ac-social-icon-28 {width:28px !important; height:28px
+        !important;} *[class].__ac_social_icons { margin-right: 0px !important; }
+        }\n<\/style><style data-ac-keep=\"true\"> @media only screen and (max-width:
+        320px) { #layout-row2 img { width: 100% !important; height: auto !important;
+        max-width: 320px !important; } #layout-row4 { max-height: 0px!important; font-size:
+        0px!important; display: none!important; visibility: hidden!important; } div.divbody
+        { padding: 20px !important; } .td_rss .rss-item img.iphone_large_image { width:
+        auto !important; } u + .body { display: table !important; width: 100vw !important;
+        min-width: 100vw !important; } u + .body table { display: table !important;
+        width: 100% !important; min-width: 100% !important; } u + .body td { display:
+        block !important; width: 100% !important; min-width: 100% !important; } u
+        + .body img { display: inline-block !important; margin: auto !important; width:
+        auto !important; vertical-align: bottom !important; } u + .body center { display:
+        block !important; margin: auto !important; width: 100% !important; min-width:
+        100% !important; text-align: center !important; } u + .body table._ac_social_table,
+        u + .body table._ac_social_table td, u + .body table._ac_social_table div,
+        u + .body table._ac_social_table a { display: inline-block !important; margin:
+        auto !important; width: auto !important; min-width: auto !important; text-align:
+        center !important; } u + .body table._ac_social_table img { display: inline-block
+        !important; margin: auto !important; width: 32px !important; min-width: 32px
+        !important; max-width: 32px !important; }\n}\n@media only screen and (max-width:
+        375px) { #layout-row2 img { width: 100% !important; height: auto !important;
+        max-width: 375px !important; } #layout-row4 { max-height: 0px!important; font-size:
+        0px!important; display: none!important; visibility: hidden!important; } div.divbody
+        { padding: 20px !important; } .td_rss .rss-item img.iphone_large_image { width:
+        auto !important; } u + .body { display: table !important; width: 100vw !important;
+        min-width: 100vw !important; } u + .body table { display: table !important;
+        width: 100% !important; min-width: 100% !important; } u + .body td { display:
+        block !important; width: 100% !important; min-width: 100% !important; } u
+        + .body img { display: inline-block !important; margin: auto !important; width:
+        auto !important; vertical-align: bottom !important; } u + .body center { display:
+        block !important; margin: auto !important; width: 100% !important; min-width:
+        100% !important; text-align: center !important; } u + .body table._ac_social_table,
+        u + .body table._ac_social_table td, u + .body table._ac_social_table div,
+        u + .body table._ac_social_table a { display: inline-block !important; margin:
+        auto !important; width: auto !important; min-width: auto !important; text-align:
+        center !important; } u + .body table._ac_social_table img { display: inline-block
+        !important; margin: auto !important; width: 32px !important; min-width: 32px
+        !important; max-width: 32px !important; }\n}\n@media only screen and (max-width:
+        414px) { #layout-row2 img { width: 100% !important; height: auto !important;
+        max-width: 414px !important; } #layout-row4 { max-height: 0px!important; font-size:
+        0px!important; display: none!important; visibility: hidden!important; } div.divbody
+        { padding: 20px !important; } .td_rss .rss-item img.iphone_large_image { width:
+        auto !important; } u + .body { display: table !important; width: 100vw !important;
+        min-width: 100vw !important; } u + .body table { display: table !important;
+        width: 100% !important; min-width: 100% !important; } u + .body td { display:
+        block !important; width: 100% !important; min-width: 100% !important; } u
+        + .body img { display: inline-block !important; margin: auto !important; width:
+        auto !important; vertical-align: bottom !important; } u + .body center { display:
+        block !important; margin: auto !important; width: 100% !important; min-width:
+        100% !important; text-align: center !important; } u + .body table._ac_social_table,
+        u + .body table._ac_social_table td, u + .body table._ac_social_table div,
+        u + .body table._ac_social_table a { display: inline-block !important; margin:
+        auto !important; width: auto !important; min-width: auto !important; text-align:
+        center !important; } u + .body table._ac_social_table img { display: inline-block
+        !important; margin: auto !important; width: 32px !important; min-width: 32px
+        !important; max-width: 32px !important; }\n}\n@media only screen and (max-width:
+        667px) { #layout-row2 img { width: 100% !important; height: auto !important;
+        max-width: 667px !important; } #layout-row4 { max-height: 0px!important; font-size:
+        0px!important; display: none!important; visibility: hidden!important; } div.divbody
+        { padding: 20px !important; } .td_rss .rss-item img.iphone_large_image { width:
+        auto !important; } u + .body { display: table !important; width: 100vw !important;
+        min-width: 100vw !important; } u + .body table { display: table !important;
+        width: 100% !important; min-width: 100% !important; } u + .body td { display:
+        block !important; width: 100% !important; min-width: 100% !important; } u
+        + .body img { display: inline-block !important; margin: auto !important; width:
+        auto !important; vertical-align: bottom !important; } u + .body center { display:
+        block !important; margin: auto !important; width: 100% !important; min-width:
+        100% !important; text-align: center !important; } u + .body table._ac_social_table,
+        u + .body table._ac_social_table td, u + .body table._ac_social_table div,
+        u + .body table._ac_social_table a { display: inline-block !important; margin:
+        auto !important; width: auto !important; min-width: auto !important; text-align:
+        center !important; } u + .body table._ac_social_table img { display: inline-block
+        !important; margin: auto !important; width: 32px !important; min-width: 32px
+        !important; max-width: 32px !important; }\n} <\/style><!--[if !mso]><!-- webfonts
+        --><!--<![endif]--><!--[if lt mso 12]> <![endif]--><\/head><body id=\"ac-designer\"
+        class=\"body\" style=\"font-family: Arial; line-height: 1.1; margin: 0px;
+        background-color: #FFFFFF; width: 100%; text-align: center;\"><div class=\"divbody\"
+        style=\"margin: 0px; outline: none; padding: 0px; color: #000000; font-family:
+        arial; line-height: 1.1; width: 100%; background-color: #FFFFFF; background:
+        #FFFFFF; text-align: center;\"><table class=\"template-table\" border=\"0\"
+        cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" align=\"left\" style=\"font-size:
+        14px; min-width: auto; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color:
+        #FFFFFF; background: #FFFFFF;\"><tr><td align=\"center\" valign=\"top\" width=\"100%\"><table
+        class=\"template-table\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\"
+        width=\"650\" bgcolor=\"#FFFFFF\" style=\"font-size: 14px; min-width: auto;
+        mso-table-lspace: 0pt; mso-table-rspace: 0pt; max-width: 650px;\"><tr><td
+        id=\"layout_table_be21754681abb2676a226678e059e3fe4889b34d\" valign=\"top\"
+        align=\"center\" width=\"650\"><table cellpadding=\"0\" cellspacing=\"0\"
+        border=\"0\" class=\"layout layout-table root-table\" width=\"650\" style=\"font-size:
+        14px; min-width: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;\"><tr><td
+        id=\"layout-row-margin4\" valign=\"top\"><table width=\"100%\" border=\"0\"
+        cellpadding=\"0\" cellspacing=\"0\" style=\"font-size: 14px; min-width: 100%;
+        mso-table-lspace: 0pt; mso-table-rspace: 0pt;\"><tr id=\"layout-row4\" class=\"layout
+        layout-row widget _widget_spacer \"><td id=\"layout-row-padding4\" valign=\"top\"><table
+        width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"font-size:
+        14px; min-width: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;\"><tr><td
+        valign=\"top\" height=\"30\"><div class=\"spacer\" style=\"margin: 0; outline:
+        none; padding: 0; height: 30px;\"><table cellpadding=\"0\" cellspacing=\"0\"
+        border=\"0\" width=\"100%\" style=\"font-size: 14px; min-width: 100%; mso-table-lspace:
+        0pt; mso-table-rspace: 0pt;\"><tbody><tr><td class=\"spacer-body\" valign=\"top\"
+        height=\"30\" width=\"650\">\u00a0<\/td><\/tr><\/tbody><\/table><\/div><\/td><\/tr><\/table><\/td><\/tr><\/table><\/td><\/tr><tr><td
+        id=\"layout-row-margin2\" valign=\"top\"><table width=\"100%\" border=\"0\"
+        cellpadding=\"0\" cellspacing=\"0\" style=\"font-size: 14px; min-width: 100%;
+        mso-table-lspace: 0pt; mso-table-rspace: 0pt;\"><tr id=\"layout-row2\" class=\"layout
+        layout-row widget _widget_picture \" align=\"center\"><td id=\"layout-row-padding2\"
+        valign=\"top\"><table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\"
+        style=\"font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+        0pt;\"><tr><td class=\"image-td\" align=\"center\" valign=\"top\" width=\"650\"><img
+        src=\"https:\/\/wegohealth1616524231.img-us10.com\/public\/\/185593c9f0b9b2069e0773fc0eb12f5d.png?r=376183691\"
+        alt=\"\" width=\"650\" style=\"display: block; border: none; outline: none;
+        width: 650px; opacity: 1; max-width: 100%;\"><\/td><\/tr><\/table><\/td><\/tr><\/table><\/td><\/tr><tr><td
+        id=\"layout-row-margin3\" valign=\"top\"><table width=\"100%\" border=\"0\"
+        cellpadding=\"0\" cellspacing=\"0\" style=\"font-size: 14px; min-width: 100%;
+        mso-table-lspace: 0pt; mso-table-rspace: 0pt;\"><tr id=\"layout-row3\" class=\"layout
+        layout-row widget _widget_spacer \"><td id=\"layout-row-padding3\" valign=\"top\"><table
+        width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"font-size:
+        14px; min-width: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;\"><tr><td
+        valign=\"top\" height=\"30\"><div class=\"spacer\" style=\"margin: 0; outline:
+        none; padding: 0; height: 30px;\"><table cellpadding=\"0\" cellspacing=\"0\"
+        border=\"0\" width=\"100%\" style=\"font-size: 14px; min-width: 100%; mso-table-lspace:
+        0pt; mso-table-rspace: 0pt;\"><tbody><tr><td class=\"spacer-body\" valign=\"top\"
+        height=\"30\" width=\"650\">\u00a0<\/td><\/tr><\/tbody><\/table><\/div><\/td><\/tr><\/table><\/td><\/tr><\/table><\/td><\/tr><tr><td
+        id=\"layout-row-margin1\" valign=\"top\"><table width=\"100%\" border=\"0\"
+        cellpadding=\"0\" cellspacing=\"0\" style=\"font-size: 14px; min-width: 100%;
+        mso-table-lspace: 0pt; mso-table-rspace: 0pt;\"><tr id=\"layout-row1\" class=\"layout
+        layout-row widget _widget_text \" style=\"margin: 0; padding: 0;\"><td id=\"layout-row-padding1\"
+        valign=\"top\"><table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\"
+        style=\"font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+        0pt;\"><tr><td id=\"text_div1\" class=\"td_text td_block\" valign=\"top\"
+        align=\"left\" width=\"650\" style=\"line-height: 140%; margin: 0; outline:
+        none; padding: 0; color: inherit; font-size: 12px; font-weight: inherit; line-height:
+        1.4; text-decoration: inherit; font-family: Arial; mso-line-height-rule: exactly;\">
+        <div style=\"line-height: 140%; margin: 0; outline: none; padding: 0; font-size:
+        12px; line-height: 1.4; mso-line-height-rule: exactly;\" data-line-height=\"1.4\">
+        <div style=\"margin: 0; outline: none; padding: 0;\"> <p style=\"margin: 0;
+        outline: none; padding: 0; color: inherit; font-size: inherit; font-weight:
+        inherit; line-height: inherit; text-decoration: inherit;\">This is your welcome
+        paragraph. You can write anything you want here. Simply click on the text
+        to start editing. Once you click on the text you will have options such as
+        bold, font color, font size, etc..<\/p><br><p style=\"margin: 0; outline:
+        none; padding: 0; color: inherit; font-size: inherit; font-weight: inherit;
+        line-height: inherit; text-decoration: inherit;\">You can also style this
+        area of content by clicking on the text and then using the options found in
+        the right side bar of this page. You can adjust the background, padding, margin,
+        etc..<\/p> <\/div> <\/div><!--[if (gte mso 12)&(lte mso 15) ]>\n<style data-ac-keep=\"true\"
+        data-ac-inline=\"false\"> #text_div1, #text_div1 div { line-height: 140% !important;
+        };\n<\/style>\n<![endif]--><\/td><\/tr><\/table><\/td><\/tr><\/table><\/td><\/tr><\/table><\/td><\/tr><\/table><\/td><\/tr><\/table><\/div><\/body><\/html>\n","categoryid":"1","used":"1","waitpreview":"0","importnum":"0","mdate":"2021-03-31T03:24:07-05:00","preview_content":"","modified":"1","hidden":"0","screenshot":"\/\/wegohealth1616524231.img-us3.com\/_screenshot_\/68096812e44a93fe61838853f620e950b521eba9.png","links":{"templateLists":"https:\/\/wegohealth1616524231.api-us1.com\/api\/3\/templates\/100000\/templateLists"},"id":"100000"}],"meta":{"total":"1"}}'
+  recorded_at: Wed, 31 Mar 2021 08:26:21 GMT
+recorded_with: VCR 6.0.0
