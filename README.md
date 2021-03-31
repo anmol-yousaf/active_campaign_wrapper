@@ -39,6 +39,7 @@ Or install it yourself as:
 * [Custom Fields](#custom-fields)
 * [Custom Field Options](#custom-field-options)
 * [Custom Field Values](#custom-field-values)
+* [Users](#users)
 * [Groups](#groups)
 
 <a name="initialize"/>
@@ -560,6 +561,75 @@ client.custom_field_values.delete(field_value_id)
 ```ruby
 client.custom_field_values.all
 ```
+<a name="users"/>
+
+### Users - [Api Reference](https://developers.activecampaign.com/reference#users)
+
+#### Create a user
+
+```ruby
+client.users.create({
+  first_name: 'Phoebe',
+  last_name: 'Buffay',
+  username: 'raginaphalange',
+  password: 'smellycat',
+  email: 'ragina.phalange@smellycat.com'
+})
+```
+**BODY PARAMS**
+- username* (string): Username
+- email (string): Email address
+- first_name (string): First name
+- last_name (string): Last name
+- group (string/integer): Group ID
+- password (string): Plain text password
+
+#### Retrieve a user
+
+```ruby
+client.users.find(user_id)
+```
+
+#### Retrieve logged in user
+
+```ruby
+client.users.logged_in
+```
+
+#### Retrieve a user by email
+
+```ruby
+client.users.find_by_email(email)
+```
+
+#### Retrieve a user by username
+
+```ruby
+client.users.find_by_username(username)
+```
+
+#### Update a user
+
+```ruby
+client.users.update(user_id, {
+  password: 'newsmellycat',
+  group: group_id
+})
+```
+*Note*: Group ID is mandatory in update.
+
+#### Delete a user
+
+```ruby
+client.users.delete(user_id)
+```
+
+#### List all users
+
+```ruby
+client.users.all
+```
+
 <a name="groups"/>
 
 ### Groups - [Api Reference](https://developers.activecampaign.com/reference#groups)

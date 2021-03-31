@@ -14,6 +14,7 @@ require 'active_campaign_wrapper/core/contact_automation_gateway'
 require 'active_campaign_wrapper/core/contact_score_value_gateway'
 require 'active_campaign_wrapper/core/group_gateway'
 require 'active_campaign_wrapper/core/list_group_gateway'
+require 'active_campaign_wrapper/core/user_gateway'
 
 require 'active_campaign_wrapper/api/contact/arguments'
 require 'active_campaign_wrapper/api/list/arguments'
@@ -79,6 +80,10 @@ module ActiveCampaignWrapper
 
     def list_groups
       @list_groups ||= ListGroupGateway.new(self)
+    end
+
+    def users
+      @users ||= UserGateway.new(self)
     end
   end
 end
