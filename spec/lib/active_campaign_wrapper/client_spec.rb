@@ -70,4 +70,28 @@ RSpec.describe ActiveCampaignWrapper::Client do
       expect(client.lists).to be_a(ActiveCampaignWrapper::Core::ListGateway)
     end
   end
+
+  describe '#groups' do
+    it 'returns a GroupGateway object' do
+      expect(client.groups).to be_a(ActiveCampaignWrapper::Core::GroupGateway)
+    end
+  end
+
+  describe '#list_groups' do
+    it 'returns a ListGroupGateway object' do
+      expect(client.list_groups).to be_a(ActiveCampaignWrapper::Core::ListGroupGateway)
+    end
+  end
+
+  describe '#users' do
+    it 'returns a UserGateway object' do
+      expect(client.users).to be_a(ActiveCampaignWrapper::Core::UserGateway)
+    end
+  end
+
+  describe '#templates' do
+    it 'returns a TemplateGateway object' do
+      expect(client.templates).to be_a(ActiveCampaignWrapper::Core::TemplateGateway)
+    end
+  end
 end
