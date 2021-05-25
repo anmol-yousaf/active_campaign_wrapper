@@ -16,7 +16,7 @@ module ActiveCampaignWrapper
       @api_token = api_token.presence || ActiveCampaignWrapper.api_token
 
       self.class.base_uri "#{@endpoint_url}/api/#{ActiveCampaignWrapper::API_VERSION}"
-      self.class.default_options.merge! headers: { api_token: @api_token }
+      self.class.default_options.merge! headers: { 'Api-Token' => @api_token }
     end
 
     def post(*args)
