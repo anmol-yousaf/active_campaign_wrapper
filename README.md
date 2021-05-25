@@ -773,7 +773,7 @@ client.task_types.find(task_type_id)
 #### Update a task type
 
 ```ruby
-client.task_types.update(task_types, {
+client.task_types.update(task_type_id, {
   title: 'New super cool title'
 })
 ```
@@ -781,7 +781,7 @@ client.task_types.update(task_types, {
 #### Delete a task type
 
 ```ruby
-client.task_types.delete(task_types)
+client.task_types.delete(task_type_id)
 ```
 
 #### List all task types
