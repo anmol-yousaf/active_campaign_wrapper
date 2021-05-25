@@ -477,6 +477,12 @@ client.custom_fields.all
 **QUERY PARAMS** (Optional)
 - limit (integer): The number of fields returned per request.
 
+#### Link a custom field to a list
+
+```ruby
+client.custom_fields.link_to_list(field_id, list_id)
+```
+
 <a name="custom-field-options"/>
 
 ### Custom Fields Options - [Api Reference](https://developers.activecampaign.com/reference#create-custom-field-options)

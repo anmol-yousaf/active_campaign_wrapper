@@ -75,4 +75,16 @@ RSpec.describe ActiveCampaignWrapper::Core::CustomFieldGateway, :vcr do
       expect(response).to eq({})
     end
   end
+
+  describe '#link_to_list', :with_text_field_params, :with_existing_list do
+    subject(:response) { custom_field_gateway.link_to_list(new_custom_field_id, list_id) }
+
+    let!(:new_custom_field_id) do
+      custom_field_gateway.create(field_params).dig(:field, :id)
+    end
+
+    it 'returns a field_rel hash' do
+      expect(response).to include_json(field_rel: { relid: list_id, field: new_custom_field_id })
+    end
+  end
 end

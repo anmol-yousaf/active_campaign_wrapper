@@ -41,6 +41,16 @@ module ActiveCampaignWrapper
       def find(field_id)
         @config.get("/fields/#{field_id}")
       end
+
+      def link_to_list(field_id, list_id)
+        params = { field_rel: { field: field_id, relid: list_id } }
+        @config.post(
+          '/fieldRels',
+          body: ActiveCampaignWrapper::Helpers.normalize_body(
+            params
+          )
+        )
+      end
     end
   end
 end
