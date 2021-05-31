@@ -7,11 +7,7 @@ module ActiveCampaignWrapper
     module_function
 
     def normalize_response(response)
-      raise ActiveCampaignWrapper::Forbidden, response['message'] if response.forbidden?
-      raise ActiveCampaignWrapper::NotFound, response['message'] if response.not_found?
-      raise ActiveCampaignWrapper::UnprocessableEntity, response['errors']&.join(', ') || response['error'] if response.unprocessable_entity?
-      raise ActiveCampaignWrapper::TooManyRequests, response['message'] if response.too_many_requests?
-      raise ActiveCampaignWrapper::Error, response['message'] unless response.success?
+      handle_errors(response)
 
       if response&.body.present?
         transform_keys(response, [:underscore])
@@ -86,6 +82,25 @@ module ActiveCampaignWrapper
           element
         end
       end
+    end
+
+    def handle_errors(response)
+      return if response.success?
+
+      class_name = if response.forbidden?
+                     ActiveCampaignWrapper::Forbidden
+                   elsif response.not_found?
+                     ActiveCampaignWrapper::NotFound
+                   elsif response.unprocessable_entity?
+                     ActiveCampaignWrapper::UnprocessableEntity
+                   elsif response.too_many_requests?
+                     ActiveCampaignWrapper::TooManyRequests
+                   else
+                     ActiveCampaignWrapper::Error
+                   end
+      raise class_name.new(response),
+            response['message'] || response['errors'].join(', ') || response['error'],
+            caller
     end
   end
 end

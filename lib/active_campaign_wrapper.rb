@@ -15,13 +15,20 @@ module ActiveCampaignWrapper
     end
   end
 
-  class Error < StandardError; end
+  class Error < StandardError
+    attr_accessor :response
 
-  class Forbidden < StandardError; end
+    def initialize(response)
+      super
+      @response = response
+    end
+  end
 
-  class UnprocessableEntity < StandardError; end
+  class Forbidden < Error; end
 
-  class NotFound < StandardError; end
+  class UnprocessableEntity < Error; end
 
-  class TooManyRequests < StandardError; end
+  class NotFound < Error; end
+
+  class TooManyRequests < Error; end
 end
