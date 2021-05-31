@@ -15,6 +15,7 @@ module ActiveCampaignWrapper
     end
   end
 
+  # :nocov:
   class Error < StandardError
     attr_accessor :response
 
@@ -31,4 +32,5 @@ module ActiveCampaignWrapper
   class NotFound < Error; end
 
   class TooManyRequests < Error; end
+  # :nocov:
 end

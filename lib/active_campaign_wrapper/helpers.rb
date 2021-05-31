@@ -2,6 +2,7 @@
 
 require 'active_support/core_ext/string'
 
+# :nocov:
 module ActiveCampaignWrapper
   module Helpers
     module_function
@@ -104,3 +105,5 @@ module ActiveCampaignWrapper
     end
   end
 end
+# :nocov:
+
